@@ -5,22 +5,22 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const testimonials = [
   {
-    name: "Mark Thompson",
-    role: "Operations Manager, FreshMart",
+    name: "Jason M.",
+    role: "Operations Manager, Brisbane CBD",
     quote:
-      "Acro delivered our 200sqm cold storage facility two weeks ahead of schedule. The smart monitoring system has already prevented two potential temperature events.",
+      "Shelair installed our full ducted system across two floors of our office complex. The team was professional, on time, and the 5-year guarantee gave us complete confidence.",
   },
   {
-    name: "Sarah Chen",
-    role: "Head Chef, Harbour Kitchen",
+    name: "Priya L.",
+    role: "Venue Manager, Sunshine Coast",
     quote:
-      "Finally a contractor who understands compliance. Our new walk-in coolroom passed HACCP inspection on the first visit. The team was professional from day one.",
+      "We've had Shelair on a maintenance contract for two years. Priority service and discounted repairs have saved us significantly. Highly recommend.",
   },
   {
-    name: "David Russo",
-    role: "Warehouse Director, PharmaLogix",
+    name: "Tom R.",
+    role: "Facilities Director, Gold Coast",
     quote:
-      "We needed pharmaceutical-grade cold storage with zero tolerance for temperature deviation. Acro engineered a system that's been flawless for 18 months.",
+      "Fast response, knowledgeable techs, and they explained everything clearly. Our old system is running like new after their service.",
   },
 ];
 
@@ -32,7 +32,7 @@ const Testimonials = () => (
           Trusted by Industry Leaders
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          See what our clients say about working with Acro Refrigeration.
+          See what our clients say about working with Shelair.
         </p>
       </ScrollReveal>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">

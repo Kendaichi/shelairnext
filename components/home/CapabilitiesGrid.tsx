@@ -1,38 +1,38 @@
 "use client";
 
-import { ShieldCheck, Zap, Wifi, Bell, Wrench, Clock } from "lucide-react";
+import { ShieldCheck, Zap, Star, DollarSign, Wrench, Clock } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const capabilities = [
   {
     icon: Clock,
-    title: "24/7 Emergency Call-Outs",
-    desc: "Round-the-clock availability for breakdowns — average 2-hour response across Brisbane, Gold Coast and SE Queensland.",
+    title: "24/7 Emergency Service",
+    desc: "Round-the-clock availability across Brisbane, Gold Coast and Sunshine Coast.",
   },
   {
     icon: Wrench,
-    title: "All Brands & Systems",
-    desc: "We service and repair all major commercial refrigeration brands, compressors, and control systems.",
+    title: "All Major AC Brands",
+    desc: "We install and service Panasonic, Daikin, Mitsubishi, Samsung, Fujitsu, LG, Toshiba, and more.",
   },
   {
     icon: ShieldCheck,
-    title: "Compliance & Certification",
-    desc: "Post-repair compliance checks and documentation for HACCP and food safety audits.",
+    title: "Licensed & ARC Approved",
+    desc: "All work completed by licensed HVAC technicians; fully ARC authorised.",
   },
   {
     icon: Zap,
-    title: "Energy Optimisation",
-    desc: "Tune-ups and upgrades that reduce energy consumption by up to 30% on ageing systems.",
+    title: "Energy Efficiency",
+    desc: "System tune-ups and upgrades that cut energy costs and improve performance.",
   },
   {
-    icon: Wifi,
-    title: "Smart Monitoring",
-    desc: "Remote temperature and performance monitoring to catch issues before they cause downtime.",
+    icon: Star,
+    title: "5-Year Workmanship Guarantee",
+    desc: "Every installation backed by a certified workmanship warranty for total peace of mind.",
   },
   {
-    icon: Bell,
-    title: "Instant Alerts",
-    desc: "SMS and email alerts when temperatures deviate — so you know before your stock is at risk.",
+    icon: DollarSign,
+    title: "Free Quotes",
+    desc: "No obligation quotes with $0 upfront and interest-free finance options available.",
   },
 ];
 
@@ -41,11 +41,11 @@ const CapabilitiesGrid = () => (
     <div className="container-narrow">
       <ScrollReveal className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          Why Businesses Trust Acro
+          Why Businesses Trust Shelair
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Reliable service, fast response, and proactive monitoring that keeps
-          your cold chain running.
+          Reliable service, fast response, and expert HVAC solutions that keep
+          your business comfortable year-round.
         </p>
       </ScrollReveal>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

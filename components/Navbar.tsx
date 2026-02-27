@@ -3,59 +3,60 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, ChevronDown, MapPin, Wrench, Building2, Tag } from "lucide-react";
+import {
+  Menu,
+  X,
+  Phone,
+  ChevronDown,
+  MapPin,
+  Wrench,
+  Building2,
+  Tag,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import acroLogo from "@/assets/acro-logo.png";
+import shelairLogo from "@/assets/shelair-logo-web.png";
 
 type DropdownKey = "services" | "industries" | "brands" | "locations";
 
 const dropdownMenus: Record<
   DropdownKey,
-  { label: string; href: string; topLink?: true }[]
+  { label: string; href: string; topLink?: true; external?: true }[]
 > = {
   services: [
     { label: "All Services", href: "/services", topLink: true },
-    { label: "24/7 Emergency Repairs", href: "/services/emergency-refrigeration-repairs" },
     {
-      label: "Preventative Maintenance",
+      label: "Air Conditioning Installation",
+      href: "/services/air-conditioning-installation",
+    },
+    {
+      label: "Air Conditioning Service & Repairs",
+      href: "/services/air-conditioning-service-repairs",
+    },
+    {
+      label: "Commercial Refrigeration Service",
       href: "/services/commercial-refrigeration-maintenance",
     },
+
     {
-      label: "Cold Room Construction",
-      href: "/services/cold-room-construction",
+      label: "Commercial Refrigeration",
+      href: "https://acrorefrigeration.com.au",
+      external: true,
     },
-    {
-      label: "Compliance & Certification",
-      href: "/services/haccp-compliance-certification",
-    },
-    { label: "Smart Monitoring", href: "/services/refrigeration-temperature-monitoring" },
-    { label: "Energy Audits & Upgrades", href: "/services/refrigeration-energy-audits" },
   ],
   industries: [
-    { label: "All Industries", href: "/industries", topLink: true },
-    {
-      label: "Restaurants & Hospitality",
-      href: "/industries/restaurants-hospitality",
-    },
-    { label: "Supermarkets & Retail", href: "/industries/supermarkets-retail" },
-    { label: "Food Production", href: "/industries/food-production" },
-    {
-      label: "Pharmaceuticals & Healthcare",
-      href: "/industries/pharmaceuticals-healthcare",
-    },
-    {
-      label: "Warehousing & Logistics",
-      href: "/industries/warehousing-logistics",
-    },
+    { label: "All Service Areas", href: "/locations", topLink: true },
+    { label: "Brisbane", href: "/locations/brisbane" },
+    { label: "Gold Coast", href: "/locations/gold-coast" },
+    { label: "Sunshine Coast", href: "/locations/sunshine-coast" },
   ],
   brands: [
     { label: "All Brands", href: "/brands", topLink: true },
-    { label: "Bitzer", href: "/brands/bitzer" },
-    { label: "Copeland", href: "/brands/copeland" },
-    { label: "Danfoss", href: "/brands/danfoss" },
+    { label: "Panasonic", href: "/brands/panasonic" },
+    { label: "Daikin", href: "/brands/daikin" },
+    { label: "Mitsubishi Electric", href: "/brands/mitsubishi" },
   ],
   locations: [
-    { label: "All Service Areas", href: "/locations", topLink: true },
+    { label: "All Locations", href: "/locations", topLink: true },
     { label: "Brisbane", href: "/locations/brisbane" },
     { label: "Gold Coast", href: "/locations/gold-coast" },
     { label: "Sunshine Coast", href: "/locations/sunshine-coast" },
@@ -63,15 +64,19 @@ const dropdownMenus: Record<
 };
 
 const plainLinks = [
-  { label: "Resources", href: "/resources" },
-  // { label: "Pricing", href: "/pricing" },
-  { label: "Contact", href: "/contact" },
+  { label: "Careers", href: "/careers" },
+  { label: "Shelair Insights", href: "/resources" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
-  const [mobileExpanded, setMobileExpanded] = useState<DropdownKey | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(
+    null
+  );
+  const [mobileExpanded, setMobileExpanded] = useState<DropdownKey | null>(
+    null
+  );
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
 
@@ -109,7 +114,6 @@ const Navbar = () => {
 
   const dropdownKeys: { key: DropdownKey; label: string }[] = [
     { key: "services", label: "Services" },
-    { key: "industries", label: "Industries" },
     { key: "brands", label: "Brands" },
     { key: "locations", label: "Locations" },
   ];
@@ -122,11 +126,11 @@ const Navbar = () => {
           className="flex items-center gap-2 font-extrabold text-xl tracking-tight"
         >
           <img
-            src={acroLogo.src}
-            alt="Acro Refrigeration"
+            src={shelairLogo.src}
+            alt="Shelair"
             className="h-10 w-10 object-contain"
           />
-          <span>Acro Refrigeration</span>
+          <span>Shelair</span>
         </Link>
 
         {/* Desktop nav */}
@@ -156,22 +160,41 @@ const Navbar = () => {
                       {item.topLink && i > 0 && (
                         <div className="mx-3 my-1 border-t border-border" />
                       )}
-                      <Link
-                        href={item.href}
-                        className={`flex items-center gap-2 px-4 py-2.5 text-sm transition-colors hover:bg-secondary ${
-                          item.topLink ? "font-medium" : ""
-                        } ${
-                          pathname === item.href
-                            ? "text-foreground"
-                            : "text-muted-foreground"
-                        }`}
-                      >
-                        {item.topLink && key === "services" && <Wrench className="w-3.5 h-3.5 text-primary shrink-0" />}
-                        {item.topLink && key === "industries" && <Building2 className="w-3.5 h-3.5 text-primary shrink-0" />}
-                        {item.topLink && key === "brands" && <Tag className="w-3.5 h-3.5 text-primary shrink-0" />}
-                        {item.topLink && key === "locations" && <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />}
-                        {item.label}
-                      </Link>
+                      {item.external ? (
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-4 py-2.5 text-sm transition-colors hover:bg-secondary text-muted-foreground"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className={`flex items-center gap-2 px-4 py-2.5 text-sm transition-colors hover:bg-secondary ${
+                            item.topLink ? "font-medium" : ""
+                          } ${
+                            pathname === item.href
+                              ? "text-foreground"
+                              : "text-muted-foreground"
+                          }`}
+                        >
+                          {item.topLink && key === "services" && (
+                            <Wrench className="w-3.5 h-3.5 text-primary shrink-0" />
+                          )}
+                          {item.topLink && key === "industries" && (
+                            <Building2 className="w-3.5 h-3.5 text-primary shrink-0" />
+                          )}
+                          {item.topLink && key === "brands" && (
+                            <Tag className="w-3.5 h-3.5 text-primary shrink-0" />
+                          )}
+                          {item.topLink && key === "locations" && (
+                            <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />
+                          )}
+                          {item.label}
+                        </Link>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -196,11 +219,11 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="tel:1300227600"
+            href="tel:0732049511"
             className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             <Phone className="w-4 h-4" />
-            1300 227 600
+            07 3204 9511
           </a>
           <Button asChild>
             <Link href="/contact">Get a Quote</Link>
@@ -243,26 +266,47 @@ const Navbar = () => {
 
                 {mobileExpanded === key && (
                   <div className="ml-3 flex flex-col gap-0.5 border-l border-border pl-3 mb-1">
-                    {dropdownMenus[key].map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={() => setMobileOpen(false)}
-                        className={`flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-colors ${
-                          item.topLink ? "font-medium" : ""
-                        } ${
-                          pathname === item.href
-                            ? "text-foreground"
-                            : "text-muted-foreground"
-                        }`}
-                      >
-                        {item.topLink && key === "services" && <Wrench className="w-3.5 h-3.5 text-primary shrink-0" />}
-                        {item.topLink && key === "industries" && <Building2 className="w-3.5 h-3.5 text-primary shrink-0" />}
-                        {item.topLink && key === "brands" && <Tag className="w-3.5 h-3.5 text-primary shrink-0" />}
-                        {item.topLink && key === "locations" && <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />}
-                        {item.label}
-                      </Link>
-                    ))}
+                    {dropdownMenus[key].map((item) =>
+                      item.external ? (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-colors text-muted-foreground"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setMobileOpen(false)}
+                          className={`flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-colors ${
+                            item.topLink ? "font-medium" : ""
+                          } ${
+                            pathname === item.href
+                              ? "text-foreground"
+                              : "text-muted-foreground"
+                          }`}
+                        >
+                          {item.topLink && key === "services" && (
+                            <Wrench className="w-3.5 h-3.5 text-primary shrink-0" />
+                          )}
+                          {item.topLink && key === "industries" && (
+                            <Building2 className="w-3.5 h-3.5 text-primary shrink-0" />
+                          )}
+                          {item.topLink && key === "brands" && (
+                            <Tag className="w-3.5 h-3.5 text-primary shrink-0" />
+                          )}
+                          {item.topLink && key === "locations" && (
+                            <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />
+                          )}
+                          {item.label}
+                        </Link>
+                      )
+                    )}
                   </div>
                 )}
               </div>
@@ -286,10 +330,10 @@ const Navbar = () => {
 
           <div className="mt-4 flex flex-col gap-2">
             <a
-              href="tel:1300227600"
+              href="tel:0732049511"
               className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Phone className="w-4 h-4" /> 1300 227 600
+              <Phone className="w-4 h-4" /> 07 3204 9511
             </a>
             <Button asChild className="w-full">
               <Link href="/contact" onClick={() => setMobileOpen(false)}>

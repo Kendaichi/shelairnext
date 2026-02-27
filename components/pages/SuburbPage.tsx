@@ -26,26 +26,26 @@ const cardVariant: Variants = {
 };
 
 const services = [
-  { icon: Clock, title: "24/7 Emergency Repairs", desc: "Round-the-clock breakdown service with rapid response." },
-  { icon: Wrench, title: "Preventative Maintenance", desc: "Scheduled servicing to prevent costly failures." },
-  { icon: ShieldCheck, title: "Compliance & Certification", desc: "HACCP documentation and food safety audits." },
-  { icon: Thermometer, title: "Smart Monitoring", desc: "IoT temperature monitoring with automated alerts." },
-  { icon: BarChart3, title: "Energy Audits", desc: "Efficiency assessments to cut running costs." },
-  { icon: Snowflake, title: "Cold Room Builds", desc: "Custom cold room design, fabrication and install." },
+  { icon: Clock, title: "24/7 Emergency Repairs", desc: "Round-the-clock breakdown service with rapid response across Brisbane, Gold Coast and Sunshine Coast." },
+  { icon: Wrench, title: "Preventative Maintenance", desc: "Scheduled servicing plans that catch issues early — contract customers get priority service and discounted repairs." },
+  { icon: ShieldCheck, title: "5-Year Workmanship Guarantee", desc: "Every installation backed by a certified 5-year workmanship guarantee." },
+  { icon: Thermometer, title: "Energy Efficiency Upgrades", desc: "System tune-ups and targeted upgrades that reduce energy consumption on ageing HVAC systems." },
+  { icon: BarChart3, title: "System Design & Consulting", desc: "From single split systems to full multi-zone commercial designs tailored to your space." },
+  { icon: Snowflake, title: "Cold Room Hire", desc: "Temporary cold room hire available across South East Queensland for events or emergency use." },
 ];
 
 const industries = [
   { icon: UtensilsCrossed, title: "Restaurants & Hospitality" },
-  { icon: ShoppingCart, title: "Supermarkets & Retail" },
-  { icon: Pill, title: "Pharmaceuticals" },
-  { icon: Warehouse, title: "Warehousing & Logistics" },
-  { icon: Factory, title: "Food Production" },
+  { icon: ShoppingCart, title: "Retail & Shopping Centres" },
+  { icon: Pill, title: "Healthcare & Medical" },
+  { icon: Warehouse, title: "Industrial & Warehousing" },
+  { icon: Factory, title: "Offices & Commercial Buildings" },
 ];
 
 const trustSignals = [
-  { icon: Clock, label: "2hr Avg Response" },
-  { icon: Wrench, label: "98% First-Visit Fix" },
-  { icon: Shield, label: "HACCP Compliant" },
+  { icon: Clock, label: "30+ Years Experience" },
+  { icon: Wrench, label: "Licensed Technicians" },
+  { icon: Shield, label: "ARC Approved & Authorised" },
   { icon: Headphones, label: "24/7 Support" },
 ];
 
@@ -90,10 +90,10 @@ const SuburbPage = () => {
               <MapPin className="w-3.5 h-3.5" /> {suburb.name}, {city.name}
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-              Commercial Refrigeration Repairs {suburb.name}
+              Air Conditioning Installation & Service {suburb.name}
             </h1>
             <p className="text-lg text-muted-foreground mb-4">
-              24/7 emergency repairs, preventative maintenance and cold room builds in {suburb.name} and surrounding areas.
+              Air conditioning installation, service and emergency repairs in {suburb.name} and surrounding areas.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
               {suburb.venueTypes.map((v) => (
@@ -102,7 +102,7 @@ const SuburbPage = () => {
             </div>
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg">
-                <a href="tel:1300227600"><Phone className="w-4 h-4 mr-2" /> 1300 227 600</a>
+                <a href="tel:0732049511"><Phone className="w-4 h-4 mr-2" /> 07 3204 9511</a>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link href="/contact">Get a Quote <ArrowRight className="w-4 h-4 ml-2" /></Link>
@@ -141,7 +141,7 @@ const SuburbPage = () => {
         <div className="container-narrow max-w-3xl">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">
-              Refrigeration Experts in {suburb.name}
+              Air Conditioning Experts in {suburb.name}
             </h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
               {suburb.localContextText}
@@ -183,7 +183,7 @@ const SuburbPage = () => {
       <section className="section-padding bg-background">
         <div className="container-narrow">
           <motion.div className="text-center mb-12" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Industries We Serve in {suburb.name}</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Sectors We Serve in {suburb.name}</h2>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {industries.map((ind, i) => (

@@ -33,10 +33,10 @@ const LocationsHub = () => (
             <MapPin className="w-3.5 h-3.5" /> Service Areas
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-            Commercial Refrigeration Repairs Near You
+            Air Conditioning Installation & Service Near You
           </h1>
           <p className="text-lg text-muted-foreground">
-            24/7 emergency repairs, preventative maintenance and cold room builds across South-East Queensland. Find your local team.
+            Air conditioning installation, service and emergency repairs across Brisbane, Gold Coast and Sunshine Coast. Find your local Shelair team.
           </p>
         </motion.div>
 

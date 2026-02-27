@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: industry.title,
     description: industry.description,
-    alternates: { canonical: `https://acrorefrigeration.com.au/industries/${industrySlug}` },
-    openGraph: { url: `https://acrorefrigeration.com.au/industries/${industrySlug}` },
+    alternates: { canonical: `https://shelair.com.au/industries/${industrySlug}` },
+    openGraph: { url: `https://shelair.com.au/industries/${industrySlug}` },
   };
 }
 

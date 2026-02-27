@@ -34,214 +34,144 @@ const servicesData: Record<string, {
   faqs: { q: string; a: string }[];
   relatedServices: { slug: string; title: string; desc: string }[];
 }> = {
-  "emergency-refrigeration-repairs": {
-    title: "24/7 Emergency Refrigeration Repairs",
-    subtitle: "Emergency Repairs",
-    heroDesc: "When your refrigeration breaks down at 2am, every minute counts. Our emergency team is on call 24/7 with an average 2-hour response time across South-East Queensland.",
+  "air-conditioning-installation": {
+    title: "Air Conditioning Installation",
+    subtitle: "AC Installation",
+    heroDesc: "Full commercial AC design, supply, and installation across Brisbane, Gold Coast and Sunshine Coast. Every project backed by our 5-year workmanship guarantee.",
     stats: [
-      { value: "2hr", label: "Avg Response" },
-      { value: "98%", label: "First-Visit Fix" },
-      { value: "24/7", label: "Always On Call" },
-      { value: "500+", label: "Emergencies/Year" },
+      { value: "5yr", label: "Workmanship Guarantee" },
+      { value: "30+", label: "Years Experience" },
+      { value: "ARC", label: "Authorised" },
+      { value: "Free", label: "Quotes" },
     ],
-    overview: "A refrigeration breakdown doesn't wait for business hours — and neither do we. Our emergency repair team carries the most common parts on every van, so we diagnose and fix on the first visit 98% of the time. From compressor failures and refrigerant leaks to electrical faults and defrost issues, we've seen it all and fixed it fast.",
+    overview: "From single split systems to full VRV multi-zone installations, we handle every stage — site survey, system design, supply, installation, and commissioning. As Panasonic's preferred supplier and authorised installers for all major brands, we deliver the right system for your building and budget.",
     benefits: [
-      "Average 2-hour response time across SEQ",
-      "98% first-visit fix rate — no repeat call-outs",
+      "Full design-to-commissioning service",
+      "Panasonic preferred supplier — all major brands available",
+      "5-year workmanship guarantee on every installation",
+      "ARC authorised technicians",
+      "Free no-obligation quotes",
+      "Interest-free finance options available",
+    ],
+    process: [
+      { step: "1", title: "Site Survey", desc: "On-site assessment of your space, access, power, and climate control requirements." },
+      { step: "2", title: "Design & Quote", desc: "System specification, energy modelling, and a detailed fixed-price quote — no surprises." },
+      { step: "3", title: "Supply & Install", desc: "Equipment supplied and installed by our licensed HVAC technicians." },
+      { step: "4", title: "Commission & Guarantee", desc: "System commissioned, tested, and signed off with your 5-year workmanship guarantee." },
+    ],
+    faqs: [
+      { q: "What brands do you install?", a: "We install all major brands including Panasonic (our preferred supplier), Daikin, Mitsubishi Electric, Fujitsu, Samsung, LG, Toshiba, and more." },
+      { q: "Do you provide a workmanship guarantee?", a: "Yes — every installation is backed by our 5-year workmanship guarantee for complete peace of mind." },
+      { q: "Do you offer free quotes?", a: "Yes. We provide no-obligation quotes with $0 upfront. Interest-free finance options are also available." },
+    ],
+    relatedServices: [
+      { slug: "air-conditioning-service-repairs", title: "AC Service & Repairs", desc: "Keep your new system running at peak efficiency with ongoing servicing." },
+      { slug: "commercial-refrigeration-maintenance", title: "Preventative Maintenance", desc: "Scheduled maintenance plans for extended equipment life and lower running costs." },
+    ],
+  },
+  "air-conditioning-service-repairs": {
+    title: "Air Conditioning Service & Repairs",
+    subtitle: "AC Service & Repairs",
+    heroDesc: "24/7 emergency AC repairs and scheduled servicing across Brisbane, Gold Coast and Sunshine Coast. Fast diagnosis and same-visit fixes for all major brands.",
+    stats: [
+      { value: "24/7", label: "Always On Call" },
+      { value: "All", label: "Major Brands" },
+      { value: "ARC", label: "Authorised" },
+      { value: "Fast", label: "Response" },
+    ],
+    overview: "When your air conditioning breaks down, every hour matters. Our emergency repair team carries parts for all major brands on every van, so we diagnose and fix on the first visit wherever possible. From compressor failures and refrigerant leaks to electrical faults and control board issues, we've seen it all and fixed it fast.",
+    benefits: [
+      "24/7 emergency call-out service",
+      "Fast response across Brisbane, Gold Coast and Sunshine Coast",
+      "All major brands serviced — Panasonic, Daikin, Mitsubishi, Fujitsu and more",
       "Fully stocked vans with common parts",
-      "All major brands serviced — Bitzer, Copeland, Danfoss",
-      "Post-repair compliance documentation included",
+      "ARC authorised technicians",
       "Transparent pricing — no hidden call-out fees",
     ],
     process: [
-      { step: "1", title: "Call Us", desc: "Call our 24/7 emergency line. A qualified technician answers — not a call centre." },
+      { step: "1", title: "Call Us", desc: "Call our 24/7 line. A qualified HVAC technician answers — not a call centre." },
       { step: "2", title: "Priority Dispatch", desc: "We dispatch the nearest available technician with the right parts for your system." },
       { step: "3", title: "Diagnose & Fix", desc: "On-site diagnosis and repair, typically within a single visit." },
-      { step: "4", title: "Certify & Document", desc: "Post-repair testing, compliance checks and digital documentation." },
+      { step: "4", title: "Test & Document", desc: "System tested and signed off with full service documentation." },
     ],
     faqs: [
-      { q: "How quickly can you get to me?", a: "Our average response time is 2 hours across South-East Queensland, including Brisbane, Gold Coast and Sunshine Coast." },
+      { q: "How quickly can you respond to an emergency?", a: "We offer 24/7 emergency call-outs across Brisbane, Gold Coast and Sunshine Coast with fast response times." },
       { q: "Do you charge extra for after-hours call-outs?", a: "We have transparent after-hours rates with no hidden fees. You'll know the cost before we start work." },
-      { q: "What brands do you repair?", a: "We service all major commercial refrigeration brands including Bitzer, Copeland, Danfoss, Daikin, Carrier and more." },
+      { q: "What brands do you repair?", a: "We service all major commercial AC brands including Panasonic, Daikin, Mitsubishi Electric, Fujitsu, Samsung, LG, Toshiba, and more." },
     ],
     relatedServices: [
+      { slug: "air-conditioning-installation", title: "AC Installation", desc: "When repairs aren't enough — full design, supply, and installation service." },
       { slug: "commercial-refrigeration-maintenance", title: "Preventative Maintenance", desc: "Scheduled servicing that prevents emergencies before they happen." },
-      { slug: "cold-room-construction", title: "Cold Room Construction", desc: "Custom cold rooms designed, fabricated and installed to spec." },
+    ],
+  },
+  "cold-room-hire": {
+    title: "Cold Room Hire",
+    subtitle: "Cold Room Hire",
+    heroDesc: "Need temporary cool storage? We provide flexible cold room hire across Brisbane, Gold Coast and Sunshine Coast — for events, peak seasons, construction sites, or emergency use.",
+    stats: [
+      { value: "24hr", label: "Delivery Available" },
+      { value: "SEQ", label: "Wide Coverage" },
+      { value: "Flex", label: "Hire Terms" },
+      { value: "24/7", label: "Support Included" },
+    ],
+    overview: "Whether you need temporary refrigeration for a one-day event or an extended hire during a kitchen renovation, our cold room units are available for fast delivery across South East Queensland. Units come in a range of sizes to suit small caterers and large venues alike — delivered, set up and ready to use.",
+    benefits: [
+      "Fast delivery — typically within 24–48 hours",
+      "Range of sizes to suit events, sites, and businesses",
+      "Flexible hire terms — daily, weekly, or longer",
+      "Delivered and set up by our technicians",
+      "24/7 support throughout your hire period",
+      "Available across Brisbane, Gold Coast and Sunshine Coast",
+    ],
+    process: [
+      { step: "1", title: "Enquire", desc: "Tell us your requirements — size, duration, location, and when you need it." },
+      { step: "2", title: "Quote & Confirm", desc: "We'll recommend the right unit and provide a transparent hire quote." },
+      { step: "3", title: "Delivery & Setup", desc: "Our team delivers and sets up your cold room, ready to use on arrival." },
+      { step: "4", title: "Return or Extend", desc: "At the end of your hire period, we collect the unit — or extend if you need longer." },
+    ],
+    faqs: [
+      { q: "How quickly can a cold room be delivered?", a: "We can typically deliver and set up a hired cold room within 24–48 hours depending on availability and location." },
+      { q: "What sizes are available?", a: "We offer a range of cold room sizes to suit your needs. Contact us to discuss your requirements and we'll recommend the right unit." },
+      { q: "Is ongoing support included?", a: "Yes — all hired units come with support and we can arrange a maintenance visit if any issues arise during the hire period." },
+    ],
+    relatedServices: [
+      { slug: "air-conditioning-service-repairs", title: "AC Service & Repairs", desc: "24/7 emergency repairs for all commercial HVAC systems." },
+      { slug: "commercial-refrigeration-maintenance", title: "Preventative Maintenance", desc: "Keep your permanent systems running with scheduled maintenance plans." },
     ],
   },
   "commercial-refrigeration-maintenance": {
     title: "Preventative Maintenance Plans",
     subtitle: "Preventative Maintenance",
-    heroDesc: "Scheduled maintenance that catches problems before they become costly breakdowns. Extend system life, cut energy costs and stay HACCP-compliant year-round.",
+    heroDesc: "Scheduled HVAC maintenance that catches problems before they become costly breakdowns. Reduce downtime, extend equipment life, and unlock priority service + discounted repair rates.",
     stats: [
       { value: "60%", label: "Fewer Breakdowns" },
       { value: "30%", label: "Energy Savings" },
       { value: "2x", label: "System Lifespan" },
-      { value: "100%", label: "HACCP Compliant" },
+      { value: "Priority", label: "Emergency Response" },
     ],
-    overview: "Reactive repairs cost 3x more than prevention. Our maintenance plans include quarterly inspections, refrigerant checks, condenser cleaning, electrical testing and compliance documentation — everything you need to keep systems running efficiently and avoid surprise breakdowns.",
+    overview: "Reactive repairs cost significantly more than prevention. Our maintenance plans include scheduled inspections, filter cleaning, refrigerant checks, electrical testing and system optimisation — everything you need to keep systems running efficiently and avoid surprise breakdowns.",
     benefits: [
-      "Quarterly scheduled inspections by qualified technicians",
-      "Refrigerant pressure and leak testing",
-      "Condenser and evaporator cleaning",
+      "Scheduled inspections by qualified HVAC technicians",
+      "Filter cleaning and component checks",
+      "Refrigerant level and leak testing",
       "Electrical connection and safety testing",
-      "HACCP compliance documentation and temperature logs",
-      "Priority emergency response for plan members",
+      "Energy efficiency assessment",
+      "Priority emergency response and discounted repair rates for plan members",
     ],
     process: [
-      { step: "1", title: "System Audit", desc: "We assess your current systems, age, condition and compliance status." },
-      { step: "2", title: "Custom Plan", desc: "A maintenance schedule tailored to your equipment and industry requirements." },
-      { step: "3", title: "Scheduled Visits", desc: "Regular inspections with full reporting and compliance documentation." },
-      { step: "4", title: "Ongoing Monitoring", desc: "Track system health over time with trend reporting and proactive alerts." },
+      { step: "1", title: "System Audit", desc: "We assess your current systems, age, condition and service history." },
+      { step: "2", title: "Custom Plan", desc: "A maintenance schedule tailored to your equipment and operational requirements." },
+      { step: "3", title: "Scheduled Visits", desc: "Regular inspections with full service reporting." },
+      { step: "4", title: "Ongoing Priority", desc: "Priority emergency response and discounted repair rates throughout your contract." },
     ],
     faqs: [
-      { q: "How often do you service?", a: "Most plans include quarterly visits, but we tailor frequency to your system age, usage and compliance needs." },
-      { q: "Do maintenance plan members get priority for emergencies?", a: "Yes — maintenance plan members receive priority dispatch with guaranteed faster response times." },
-      { q: "Will this actually save me money?", a: "On average, our clients see 60% fewer breakdowns and 30% lower energy costs within the first year." },
+      { q: "How often do you service?", a: "Most plans include quarterly visits, but we tailor frequency to your system age, usage and requirements." },
+      { q: "Do maintenance plan members get priority for emergencies?", a: "Yes — maintenance plan members receive priority dispatch and discounted repair rates." },
+      { q: "Will this actually save me money?", a: "On average, our clients see significantly fewer breakdowns and lower energy costs within the first year." },
     ],
     relatedServices: [
-      { slug: "emergency-refrigeration-repairs", title: "24/7 Emergency Repairs", desc: "Round-the-clock breakdown service when you need it most." },
-      { slug: "cold-room-construction", title: "Cold Room Construction", desc: "Custom cold rooms designed, fabricated and installed to spec." },
-    ],
-  },
-  "cold-room-construction": {
-    title: "Custom Cold Room Construction",
-    subtitle: "Cold Room Construction",
-    heroDesc: "When you need new cold storage capacity, our in-house team designs, fabricates and installs custom HACCP-compliant cold rooms built to last.",
-    stats: [
-      { value: "200+", label: "Cold Rooms Built" },
-      { value: "15yr", label: "Avg Panel Life" },
-      { value: "100%", label: "HACCP Compliant" },
-      { value: "4wk", label: "Avg Build Time" },
-    ],
-    overview: "From single-door coolrooms to multi-zone freezer facilities, we handle every stage — site survey, engineering design, panel fabrication, refrigeration fit-out and commissioning. All builds use high-density polyurethane insulation and food-grade stainless steel finishes.",
-    benefits: [
-      "Full design-to-commissioning service",
-      "High-density polyurethane insulated panels",
-      "Food-grade stainless steel finishes",
-      "Energy-efficient refrigeration systems",
-      "HACCP and council compliance included",
-      "Ongoing maintenance packages available",
-    ],
-    process: [
-      { step: "1", title: "Site Survey", desc: "On-site assessment of space, access, power and compliance requirements." },
-      { step: "2", title: "Design & Quote", desc: "Engineered drawings, equipment specification and detailed fixed-price quote." },
-      { step: "3", title: "Build & Install", desc: "Panel fabrication, refrigeration fit-out and electrical connection." },
-      { step: "4", title: "Commission & Certify", desc: "System testing, temperature validation and compliance certification." },
-    ],
-    faqs: [
-      { q: "How long does a cold room build take?", a: "Most standard builds take 3-4 weeks from approval. Complex multi-zone facilities may take 6-8 weeks." },
-      { q: "Do you handle council approvals?", a: "Yes — we manage all compliance documentation and can assist with council submissions." },
-      { q: "Can you retrofit into an existing space?", a: "Absolutely. We specialise in retrofitting cold rooms into existing commercial kitchens and warehouses." },
-    ],
-    relatedServices: [
-      { slug: "emergency-refrigeration-repairs", title: "24/7 Emergency Repairs", desc: "Round-the-clock breakdown service when you need it most." },
-      { slug: "commercial-refrigeration-maintenance", title: "Preventative Maintenance", desc: "Scheduled servicing that prevents emergencies before they happen." },
-    ],
-  },
-  "haccp-compliance-certification": {
-    title: "Compliance & Certification Services",
-    subtitle: "Compliance & Certification",
-    heroDesc: "Stay audit-ready year-round. We provide post-repair compliance checks, HACCP documentation, temperature logging and certification for food safety, pharmaceutical and council requirements.",
-    stats: [
-      { value: "100%", label: "Audit Pass Rate" },
-      { value: "2yr", label: "Records Retained" },
-      { value: "24/7", label: "Monitoring Available" },
-      { value: "15yr", label: "Compliance Experience" },
-    ],
-    overview: "A failed food safety audit can cost your business thousands in fines, forced closures and reputational damage. Our compliance service ensures every repair, maintenance visit and system modification is fully documented to the standard required by EHOs, TGA auditors and HACCP inspectors. We provide digital documentation for every job, retained and accessible on demand.",
-    benefits: [
-      "Post-repair compliance certificates for every job",
-      "HACCP-ready temperature logs and maintenance records",
-      "TGA cold chain documentation for pharmaceutical storage",
-      "Council compliance assistance for new cold room builds",
-      "Digital records retained for 2+ years",
-      "On-demand report export for audits and inspections",
-    ],
-    process: [
-      { step: "1", title: "System Assessment", desc: "We review your current documentation, equipment and compliance gaps." },
-      { step: "2", title: "Repair & Certify", desc: "All work is performed by ARCtick-licensed technicians and documented to compliance standard." },
-      { step: "3", title: "Documentation", desc: "Digital compliance report issued — temperature validation, parts replaced, technician sign-off." },
-      { step: "4", title: "Ongoing Records", desc: "All records stored in your compliance portal, accessible anytime for audits." },
-    ],
-    faqs: [
-      { q: "What does a compliance certificate include?", a: "Our compliance certificates document the work performed, refrigerant handled, post-repair temperature validation, and technician ARCtick licence number — everything an EHO needs." },
-      { q: "Do you provide HACCP documentation?", a: "Yes. Every maintenance visit includes a service report suitable for inclusion in your HACCP records. We can also assist with setting up your HACCP temperature monitoring plan." },
-      { q: "Can you help with TGA cold chain requirements?", a: "Yes — we are experienced with TGA cold chain guidelines for pharmaceutical cold rooms, including validation protocols and redundant monitoring requirements." },
-    ],
-    relatedServices: [
-      { slug: "commercial-refrigeration-maintenance", title: "Preventative Maintenance", desc: "Scheduled servicing that keeps your compliance records current." },
-      { slug: "refrigeration-temperature-monitoring", title: "Smart Monitoring", desc: "Automated temperature logging for continuous HACCP compliance." },
-    ],
-  },
-  "refrigeration-temperature-monitoring": {
-    title: "Smart Temperature Monitoring Systems",
-    subtitle: "Smart Monitoring",
-    heroDesc: "IoT-enabled temperature monitoring with real-time cloud dashboards, automated alerts and continuous HACCP logging. Know about problems before your stock is at risk.",
-    stats: [
-      { value: "24/7", label: "Continuous Monitoring" },
-      { value: "<5min", label: "Alert Response Time" },
-      { value: "2yr+", label: "Data Retention" },
-      { value: "30%", label: "Fewer Emergencies" },
-    ],
-    overview: "Smart monitoring transforms refrigeration management from reactive to proactive. Wireless sensors inside every cold room and display case transmit temperature data to a cloud dashboard every few minutes. If temperature rises above your threshold, an SMS and email alert is sent immediately — giving you time to act before stock is lost or a HACCP excursion occurs.",
-    benefits: [
-      "Wireless sensors — no cabling, fast installation",
-      "Real-time cloud dashboard accessible from any device",
-      "Customisable SMS and email alerts by threshold",
-      "Automated HACCP-ready temperature logs with timestamps",
-      "Historical data and trend analysis",
-      "Multi-site management from a single dashboard",
-    ],
-    process: [
-      { step: "1", title: "Site Assessment", desc: "We identify monitoring points — cold rooms, display cases, freezers — and specify the right sensors." },
-      { step: "2", title: "Installation", desc: "Wireless sensors installed and calibrated. Platform configured with your alert thresholds." },
-      { step: "3", title: "Dashboard Setup", desc: "Your team is onboarded to the cloud platform with alert contacts configured." },
-      { step: "4", title: "Ongoing Monitoring", desc: "Continuous data collection, alert management and periodic calibration checks." },
-    ],
-    faqs: [
-      { q: "How quickly are alerts sent?", a: "Alerts are typically sent within 2–5 minutes of a temperature excursion being detected, depending on the sensor polling interval configured for your system." },
-      { q: "Can I monitor multiple sites from one dashboard?", a: "Yes. Our platform supports unlimited sites and monitoring points from a single login — ideal for multi-store retailers and hospitality groups." },
-      { q: "Does this replace manual temperature checks?", a: "For HACCP purposes, automated monitoring with timestamped logs is actually more defensible than manual checks. Most clients discontinue manual logging once monitoring is installed." },
-    ],
-    relatedServices: [
-      { slug: "haccp-compliance-certification", title: "Compliance & Certification", desc: "Complete HACCP documentation and audit-ready records." },
-      { slug: "commercial-refrigeration-maintenance", title: "Preventative Maintenance", desc: "Scheduled servicing paired with monitoring for maximum uptime." },
-    ],
-  },
-  "refrigeration-energy-audits": {
-    title: "Energy Audits & Efficiency Upgrades",
-    subtitle: "Energy Audits & Upgrades",
-    heroDesc: "Comprehensive refrigeration energy assessments that identify savings of 20–30% on typical commercial systems — with a clear upgrade roadmap and payback analysis.",
-    stats: [
-      { value: "30%", label: "Avg Energy Savings" },
-      { value: "2yr", label: "Typical Payback" },
-      { value: "500+", label: "Audits Completed" },
-      { value: "15yr", label: "Energy Experience" },
-    ],
-    overview: "For most food businesses, refrigeration accounts for 30–60% of total electricity costs. Our energy audits systematically identify every source of inefficiency — from dirty condensers and worn door seals to oversized systems and poor defrost scheduling — and provide a prioritised action plan with projected savings and payback periods for every recommendation.",
-    benefits: [
-      "Full system audit with efficiency benchmarking",
-      "Prioritised recommendations with savings estimates",
-      "Payback analysis for each upgrade",
-      "Condenser cleaning and tune-up included",
-      "VSD compressor upgrade assessment",
-      "Post-upgrade measurement and verification",
-    ],
-    process: [
-      { step: "1", title: "Baseline Audit", desc: "We measure current energy consumption and identify all inefficiency sources across your refrigeration assets." },
-      { step: "2", title: "Recommendations", desc: "Prioritised upgrade plan with projected savings, costs and payback periods for each measure." },
-      { step: "3", title: "Implement Upgrades", desc: "Our team carries out approved upgrades — from quick wins like coil cleaning to compressor upgrades." },
-      { step: "4", title: "Verify Savings", desc: "Post-upgrade monitoring confirms actual savings delivered against projections." },
-    ],
-    faqs: [
-      { q: "How much can I realistically save?", a: "Most commercial refrigeration systems have 20–35% efficiency headroom. Our audits consistently find savings within this range, with many quick-win items paying back within 6–12 months." },
-      { q: "Do I need to replace my whole system?", a: "Rarely. The majority of savings come from maintenance, settings optimisation and targeted component upgrades — not full system replacement." },
-      { q: "How long does an audit take?", a: "A typical commercial site audit takes 2–4 hours on-site, with a written report and recommendations delivered within 5 business days." },
-    ],
-    relatedServices: [
-      { slug: "commercial-refrigeration-maintenance", title: "Preventative Maintenance", desc: "Ongoing maintenance that keeps efficiency gains locked in." },
-      { slug: "refrigeration-temperature-monitoring", title: "Smart Monitoring", desc: "Continuous monitoring to detect efficiency drift before it costs you." },
+      { slug: "air-conditioning-service-repairs", title: "AC Service & Repairs", desc: "Round-the-clock breakdown service when you need it most." },
+      { slug: "air-conditioning-installation", title: "AC Installation", desc: "When it's time to upgrade — full design, supply, and installation." },
     ],
   },
 };
@@ -263,7 +193,6 @@ const ServicePage = () => {
 
   return (
     <Layout>
-      
 
       {/* Breadcrumb */}
       <section className="bg-secondary px-6 py-4">
@@ -292,7 +221,7 @@ const ServicePage = () => {
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg"><Link href="/contact">Get a Quote <ArrowRight className="w-4 h-4 ml-2" /></Link></Button>
               <Button asChild size="lg" variant="destructive" className="gradient-cta border-0">
-                <a href="tel:1300227600"><Phone className="w-4 h-4 mr-2" /> 1300 227 600</a>
+                <a href="tel:0732049511"><Phone className="w-4 h-4 mr-2" /> 07 3204 9511</a>
               </Button>
             </div>
           </motion.div>
@@ -315,7 +244,7 @@ const ServicePage = () => {
       <section className="section-padding bg-background">
         <div className="container-narrow grid lg:grid-cols-2 gap-12 items-start">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <h2 className="text-3xl font-extrabold mb-4">What's Included</h2>
+            <h2 className="text-3xl font-extrabold mb-4">What&apos;s Included</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">{service.overview}</p>
             <Button asChild variant="outline"><Link href="/contact">Discuss Your Needs <ArrowRight className="w-4 h-4 ml-2" /></Link></Button>
           </motion.div>

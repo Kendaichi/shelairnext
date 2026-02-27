@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Brands from "@/components/pages/Brands";
 
 export const metadata: Metadata = {
-  title: "Commercial Refrigeration Brands We Service",
+  title: "Air Conditioning Brands We Install & Service | Shelair",
   description:
-    "Specialist repairs and servicing for all major commercial refrigeration brands — Bitzer, Copeland, Danfoss, Daikin, Carrier and more. Expert technicians across Brisbane & SE Queensland.",
-  alternates: { canonical: "https://acrorefrigeration.com.au/brands" },
-  openGraph: { url: "https://acrorefrigeration.com.au/brands" },
+    "We install and service all major air conditioning brands — Panasonic, Daikin, Mitsubishi Electric, Fujitsu, Samsung, LG and more. Expert HVAC technicians across Brisbane, Gold Coast and Sunshine Coast.",
+  alternates: { canonical: "https://shelair.com.au/brands" },
+  openGraph: { url: "https://shelair.com.au/brands" },
 };
 
 export default function BrandsPage() {

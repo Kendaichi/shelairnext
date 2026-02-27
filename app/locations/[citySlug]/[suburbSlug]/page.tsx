@@ -22,8 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Commercial Refrigeration Repairs ${suburb.name}`,
     description: `24/7 emergency repairs, preventative maintenance and cold room builds in ${suburb.name} and surrounding areas. Fast response, HACCP-certified.`,
-    alternates: { canonical: `https://acrorefrigeration.com.au/locations/${citySlug}/${suburbSlug}` },
-    openGraph: { url: `https://acrorefrigeration.com.au/locations/${citySlug}/${suburbSlug}` },
+    alternates: { canonical: `https://shelair.com.au/locations/${citySlug}/${suburbSlug}` },
+    openGraph: { url: `https://shelair.com.au/locations/${citySlug}/${suburbSlug}` },
   };
 }
 
@@ -36,11 +36,11 @@ export default async function SuburbPageRoute({ params }: Props) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Acro Refrigeration",
+    name: "Shelair",
     description: `24/7 emergency refrigeration repairs and maintenance in ${suburb.name}, ${city.name}.`,
-    url: "https://acrorefrigeration.com.au",
-    telephone: "+611300227600",
-    email: "service@acrorefrigeration.com.au",
+    url: "https://shelair.com.au",
+    telephone: "+61732049511",
+    email: "service@shelair.com.au",
     areaServed: [
       { "@type": "City", name: city.name },
       { "@type": "Place", name: suburb.name },
@@ -64,10 +64,10 @@ export default async function SuburbPageRoute({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://acrorefrigeration.com.au" },
-      { "@type": "ListItem", position: 2, name: "Locations", item: "https://acrorefrigeration.com.au/locations" },
-      { "@type": "ListItem", position: 3, name: city.name, item: `https://acrorefrigeration.com.au/locations/${citySlug}` },
-      { "@type": "ListItem", position: 4, name: suburb.name, item: `https://acrorefrigeration.com.au/locations/${citySlug}/${suburbSlug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://shelair.com.au" },
+      { "@type": "ListItem", position: 2, name: "Locations", item: "https://shelair.com.au/locations" },
+      { "@type": "ListItem", position: 3, name: city.name, item: `https://shelair.com.au/locations/${citySlug}` },
+      { "@type": "ListItem", position: 4, name: suburb.name, item: `https://shelair.com.au/locations/${citySlug}/${suburbSlug}` },
     ],
   };
 

@@ -34,11 +34,11 @@ const LocationsSection = () => (
           <MapPin className="w-3.5 h-3.5" /> Service Areas
         </div>
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          Commercial Refrigeration Repairs Near You
+          Air Conditioning Service Near You
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          24/7 emergency repairs and maintenance across South-East Queensland.
-          Find your local team.
+          24/7 emergency service and installation across Brisbane, the Gold
+          Coast, and the Sunshine Coast. Find your local team.
         </p>
       </motion.div>
 

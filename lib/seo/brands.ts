@@ -1,17 +1,17 @@
 export const brandsData: Record<string, { name: string; description: string }> = {
-  bitzer: {
-    name: "Bitzer",
+  panasonic: {
+    name: "Panasonic",
     description:
-      "Specialist Bitzer compressor diagnostics, repairs and maintenance. Our technicians are trained on the full Bitzer range — from semi-hermetic reciprocating compressors to screw compressors and condensing units.",
+      "Shelair's preferred AC brand. Expert Panasonic air conditioning installation, service and repairs across Brisbane, Gold Coast and Sunshine Coast. Energy-efficient inverter systems with industry-leading reliability.",
   },
-  copeland: {
-    name: "Copeland",
+  daikin: {
+    name: "Daikin",
     description:
-      "Trusted Copeland scroll and semi-hermetic compressor servicing. We diagnose and repair the full Copeland range used in commercial refrigeration and air conditioning systems across SEQ.",
+      "Premium Daikin split system and VRV multi-zone installation and servicing. Our technicians are trained across the full Daikin commercial range for offices, retail and hospitality environments across SEQ.",
   },
-  danfoss: {
-    name: "Danfoss",
+  mitsubishi: {
+    name: "Mitsubishi Electric",
     description:
-      "Expert servicing of Danfoss controls, valves, compressors and drives. From expansion valve replacements to controller programming and compressor diagnostics.",
+      "Expert Mitsubishi Electric air conditioning installation and servicing. High-performance heat pump and ducted systems ideal for offices, retail spaces and commercial buildings across South-East Queensland.",
   },
 };

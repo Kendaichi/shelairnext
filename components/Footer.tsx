@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Phone, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
-import acroLogo from "@/assets/acro-logo.png";
+import shelairLogo from "@/assets/shelair-logo-web.png";
 
 const Footer = () => (
   <footer className="bg-dark text-dark-foreground">
@@ -11,37 +11,37 @@ const Footer = () => (
         <div>
           <div className="flex items-center gap-2 font-extrabold text-xl mb-4">
             <img
-              src={acroLogo.src}
-              alt="Acro Refrigeration"
+              src={shelairLogo.src}
+              alt="Shelair"
               className="h-10 w-10 object-contain"
             />
-            Acro Refrigeration
+            Shelair
           </div>
           <p className="text-dark-foreground/60 text-sm leading-relaxed mb-6">
-            Australia's trusted commercial refrigeration contractor. 24/7
-            emergency repairs, maintenance plans and cold room builds across
-            SE Queensland.
+            Shelair provides commercial air conditioning installation, service
+            and maintenance across Brisbane, the Gold Coast, and the Sunshine
+            Coast. Part of the HVACR Group.
           </p>
           <div className="flex flex-col gap-3 text-sm text-dark-foreground/60">
             <a
-              href="tel:1300227600"
+              href="tel:0732049511"
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
-              <Phone className="w-4 h-4" /> 1300 227 600
+              <Phone className="w-4 h-4" /> 07 3204 9511
             </a>
             <a
-              href="mailto:info@acrorefrigeration.com.au"
+              href="mailto:info@shelair.com.au"
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
-              <Mail className="w-4 h-4" /> info@acrorefrigeration.com.au
+              <Mail className="w-4 h-4" /> info@shelair.com.au
             </a>
             <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" /> Brisbane, SE Queensland
+              <MapPin className="w-4 h-4" /> Unit 3, 9–11 Imboon Street, Deception Bay QLD 4508
             </span>
           </div>
           <div className="flex items-center gap-3 mt-6">
             <a
-              href="https://www.facebook.com/acrorefrigeration/"
+              href="https://www.facebook.com/shelair/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -50,7 +50,7 @@ const Footer = () => (
               <Facebook className="w-4 h-4" />
             </a>
             <a
-              href="https://www.linkedin.com/company/acro-refrigeration-qld/"
+              href="https://www.linkedin.com/company/shelair/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -67,61 +67,23 @@ const Footer = () => (
           </h4>
           <ul className="space-y-2.5 text-sm text-dark-foreground/60">
             <li>
-              <Link href="/services" className="hover:text-primary transition-colors">
-                24/7 Emergency Repairs
+              <Link href="/services/air-conditioning-installation" className="hover:text-primary transition-colors">
+                Air Conditioning Installation
               </Link>
+            </li>
+            <li>
+              <Link href="/services/air-conditioning-service-repairs" className="hover:text-primary transition-colors">
+                Air Conditioning Service & Repairs
+              </Link>
+            </li>
+            <li>
+              <a href="https://acrorefrigeration.com.au" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                Commercial Refrigeration
+              </a>
             </li>
             <li>
               <Link href="/services" className="hover:text-primary transition-colors">
-                Preventative Maintenance
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="hover:text-primary transition-colors">
-                Compliance & Certification
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="hover:text-primary transition-colors">
-                Energy Audits
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="hover:text-primary transition-colors">
-                Cold Room Construction
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-dark-foreground/40">
-            Industries
-          </h4>
-          <ul className="space-y-2.5 text-sm text-dark-foreground/60">
-            <li>
-              <Link href="/industries" className="hover:text-primary transition-colors">
-                Restaurants & Hospitality
-              </Link>
-            </li>
-            <li>
-              <Link href="/industries" className="hover:text-primary transition-colors">
-                Supermarkets
-              </Link>
-            </li>
-            <li>
-              <Link href="/industries" className="hover:text-primary transition-colors">
-                Pharmaceuticals
-              </Link>
-            </li>
-            <li>
-              <Link href="/industries" className="hover:text-primary transition-colors">
-                Warehousing
-              </Link>
-            </li>
-            <li>
-              <Link href="/industries" className="hover:text-primary transition-colors">
-                Food Production
+                Preventative Maintenance Plans
               </Link>
             </li>
           </ul>
@@ -133,28 +95,56 @@ const Footer = () => (
           </h4>
           <ul className="space-y-2.5 text-sm text-dark-foreground/60">
             <li>
-              <Link href="/process" className="hover:text-primary transition-colors">
-                Our Process
-              </Link>
-            </li>
-            <li>
-              <Link href="/projects" className="hover:text-primary transition-colors">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="/pricing" className="hover:text-primary transition-colors">
-                Pricing
+              <Link href="/about" className="hover:text-primary transition-colors">
+                About Shelair
               </Link>
             </li>
             <li>
               <Link href="/resources" className="hover:text-primary transition-colors">
-                Resources
+                Shelair Insights
               </Link>
             </li>
             <li>
+              <Link href="/careers" className="hover:text-primary transition-colors">
+                Careers
+              </Link>
+            </li>
+            <li>
+              <a href="https://hvacrgroup.com.au" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                HVACR Group
+              </a>
+            </li>
+            <li>
               <Link href="/contact" className="hover:text-primary transition-colors">
-                Contact
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-dark-foreground/40">
+            Service Areas
+          </h4>
+          <ul className="space-y-2.5 text-sm text-dark-foreground/60">
+            <li>
+              <Link href="/locations/brisbane" className="hover:text-primary transition-colors">
+                Brisbane
+              </Link>
+            </li>
+            <li>
+              <Link href="/locations/gold-coast" className="hover:text-primary transition-colors">
+                Gold Coast
+              </Link>
+            </li>
+            <li>
+              <Link href="/locations/sunshine-coast" className="hover:text-primary transition-colors">
+                Sunshine Coast
+              </Link>
+            </li>
+            <li>
+              <Link href="/locations" className="hover:text-primary transition-colors">
+                All Locations
               </Link>
             </li>
           </ul>
@@ -163,7 +153,7 @@ const Footer = () => (
 
       <div className="border-t border-dark-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-dark-foreground/40">
         <p>
-          © {new Date().getFullYear()} Acro Refrigeration. All rights reserved.
+          © {new Date().getFullYear()} HVACR Pty Ltd. All rights reserved.
           ABN 43 672 578 264
         </p>
         <div className="flex gap-6">

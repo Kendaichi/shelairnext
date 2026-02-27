@@ -66,7 +66,7 @@ export const resources: Resource[] = [
         content: [
           "HACCP compliance is not just about the physical cold room — it requires documented evidence. You must be able to demonstrate that temperatures are being monitored continuously, that corrective actions are taken when excursions occur, and that your refrigeration system is maintained to schedule.",
           "Temperature records should be logged at minimum every 4 hours, though automated IoT monitoring systems provide continuous records with timestamps that are far more defensible in an audit. Each corrective action — including repair receipts, technician reports and post-repair temperature validation — should be filed and retained for at least 2 years.",
-          "Maintenance records must document every service visit, parts replaced, refrigerant handled and compliance checks performed. Acro Refrigeration provides digital compliance documentation for every repair and scheduled service visit.",
+          "Maintenance records must document every service visit, parts replaced, refrigerant handled and compliance checks performed. Shelair provides digital compliance documentation for every repair and scheduled service visit.",
         ],
       },
       {
@@ -74,7 +74,7 @@ export const resources: Resource[] = [
         content: [
           "When an EHO (Environmental Health Officer) or third-party auditor visits, they will typically check that your cold room temperatures are within spec at the time of inspection, that your monitoring records are complete and accessible, that your cleaning schedule is documented and followed, and that your refrigeration equipment has been professionally serviced.",
           "The most common audit failures relate to incomplete temperature records, unsealed penetrations, worn door seals, and dirty condenser coils. Regular preventative maintenance — ideally on a quarterly schedule — addresses all of these systematically.",
-          "If you are preparing for your first HACCP audit or have received a non-compliance notice, contact Acro Refrigeration. We can conduct a compliance assessment of your cold room and provide the documentation and rectification work needed to pass.",
+          "If you are preparing for your first HACCP audit or have received a non-compliance notice, contact Shelair. We can conduct a compliance assessment of your cold room and provide the documentation and rectification work needed to pass.",
         ],
       },
     ],
@@ -148,7 +148,7 @@ export const resources: Resource[] = [
     icon: FileText,
     title: "FreshMart: 200sqm Multi-Temperature Cold Storage",
     desc: "How we delivered a complex multi-zone facility two weeks ahead of schedule.",
-    metaDescription: "Case study: Acro Refrigeration designs and builds a 200sqm multi-temperature cold storage facility for FreshMart, delivered two weeks ahead of schedule with full HACCP certification.",
+    metaDescription: "Case study: Shelair designs and builds a 200sqm multi-temperature cold storage facility for FreshMart, delivered two weeks ahead of schedule with full HACCP certification.",
     date: "Dec 2025",
     readTime: "5 min read",
     sections: [
@@ -170,7 +170,7 @@ export const resources: Resource[] = [
       {
         heading: "Our Approach",
         content: [
-          "Acro Refrigeration's project team began with a detailed site survey and thermal modelling exercise, using the store's trading data to accurately size each refrigeration system for peak load conditions. This upfront engineering work is critical for multi-zone facilities — undersized systems in adjacent zones can cause thermal interference that is difficult and expensive to rectify after installation.",
+          "Shelair's project team began with a detailed site survey and thermal modelling exercise, using the store's trading data to accurately size each refrigeration system for peak load conditions. This upfront engineering work is critical for multi-zone facilities — undersized systems in adjacent zones can cause thermal interference that is difficult and expensive to rectify after installation.",
           "We specified 150mm PU foam panels for the blast freezer and 100mm panels for the remaining zones, with all inter-zone walls designed to provide thermal breaks. The refrigeration plant was configured on a central rack system with zone-dedicated expansion valves and electronic controllers, allowing each zone to be managed independently.",
           "For the pharmaceutical unit, we installed a redundant monitoring system with dual temperature probes, UPS-backed alarms and cloud-connected logging that provides the continuous, timestamped records required for TGA compliance.",
         ],
@@ -180,7 +180,7 @@ export const resources: Resource[] = [
         content: [
           "The installation was completed in 12 weeks — two weeks ahead of the contracted schedule — allowing FreshMart's fitout team additional time before the store opening. All four zones passed temperature validation and HACCP inspection on the first attempt.",
           "The pharmaceutical unit received TGA cold chain validation, enabling FreshMart to stock a broader range of temperature-sensitive health products than their previous store configuration allowed.",
-          "Twelve months post-installation, all systems are operating at specification. FreshMart has since engaged Acro Refrigeration on a quarterly maintenance contract across all four stores, with smart monitoring installed at the flagship site.",
+          "Twelve months post-installation, all systems are operating at specification. FreshMart has since engaged Shelair on a quarterly maintenance contract across all four stores, with smart monitoring installed at the flagship site.",
         ],
       },
       {
@@ -237,7 +237,7 @@ export const resources: Resource[] = [
         heading: "Cost vs. Lifetime Value",
         content: [
           "A 200sqm coolroom built with standard 100mm PU panels might cost $8,000–$12,000 less than the same room built with 150mm PIR panels. However, the thinner panel room will typically cost $3,000–$6,000 more per year to run in energy costs — meaning the 'cheaper' option pays back its saving within 2–4 years and then costs more every year thereafter.",
-          "When commissioning a new cold room, always ask your builder to provide a lifecycle cost comparison across panel options. Acro Refrigeration provides this analysis as part of our standard quoting process — including projected energy costs, maintenance requirements and expected system life for each specification.",
+          "When commissioning a new cold room, always ask your builder to provide a lifecycle cost comparison across panel options. Shelair provides this analysis as part of our standard quoting process — including projected energy costs, maintenance requirements and expected system life for each specification.",
         ],
       },
     ],
@@ -348,7 +348,7 @@ export const resources: Resource[] = [
         content: [
           "A basic monitoring system for a single cold room — one wireless temperature sensor, cloud connectivity and mobile alerts — typically costs $800–$1,500 installed. For a business with 5–10 monitoring points (multiple cold rooms, display cases and a freezer), expect $3,000–$6,000 for a professionally installed system with a quality cloud platform.",
           "Ongoing costs vary by platform — some charge a monthly SaaS fee of $50–$150/month for the cloud dashboard and alerting, while others have no ongoing fees after installation. Over a 5-year period, total cost of ownership typically ranges from $5,000–$15,000 for a medium-sized food business.",
-          "When weighed against a single prevented stock loss event ($5,000–$20,000) and the ongoing benefits of energy savings and compliance automation, the ROI for most businesses is measured in months, not years. Ask Acro Refrigeration about our monitoring installation service and platform recommendations.",
+          "When weighed against a single prevented stock loss event ($5,000–$20,000) and the ongoing benefits of energy savings and compliance automation, the ROI for most businesses is measured in months, not years. Ask Shelair about our monitoring installation service and platform recommendations.",
         ],
       },
     ],

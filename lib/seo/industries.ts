@@ -1,27 +1,27 @@
 export const industriesData: Record<string, { title: string; description: string }> = {
-  "restaurants-hospitality": {
-    title: "Refrigeration Repairs for Restaurants & Hospitality",
+  "offices-commercial": {
+    title: "Air Conditioning for Offices & Commercial Buildings",
     description:
-      "Your kitchen can't afford downtime. We provide 24/7 emergency repairs, scheduled maintenance and compliance servicing for commercial kitchens, hotels and venues across South-East Queensland.",
+      "Climate control solutions for offices, retail spaces, and multi-tenant buildings. Energy-efficient HVAC systems designed and installed by licensed technicians across Brisbane, Gold Coast and Sunshine Coast.",
   },
-  "supermarkets-retail": {
-    title: "Refrigeration Repairs for Supermarkets & Retail",
+  "retail-shopping-centres": {
+    title: "Air Conditioning for Retail & Shopping Centres",
     description:
-      "Protect your stock and your margins. Rapid-response breakdown service, scheduled maintenance and energy optimisation for display cases, cold rooms and multi-temperature systems.",
+      "Zoned HVAC systems for consistent comfort and energy efficiency across retail stores and shopping centres. Fast-response service to keep your customers comfortable.",
   },
-  "food-production": {
-    title: "Refrigeration for Food Production & Manufacturing",
+  "healthcare-medical": {
+    title: "Air Conditioning for Healthcare & Medical",
     description:
-      "Keep your production line moving. Continuous-operation servicing for processing rooms, blast freezers and production-line refrigeration systems.",
+      "Precise climate control for clinics, hospitals, and pharmaceutical environments. ARC-authorised technicians delivering compliant HVAC solutions across South-East Queensland.",
   },
-  "pharmaceuticals-healthcare": {
-    title: "Refrigeration for Pharmaceuticals & Healthcare",
+  "industrial-warehousing": {
+    title: "Air Conditioning for Industrial & Warehousing",
     description:
-      "Precision temperature-controlled storage for vaccines, medicines and biological materials. TGA-compliant cold chain systems with redundant monitoring and full audit trails.",
+      "Robust HVAC solutions for large floor areas, factories, and logistics centres. High-capacity systems engineered for continuous operation and commercial environments.",
   },
-  "warehousing-logistics": {
-    title: "Refrigeration for Warehousing & Logistics",
+  "hospitality-restaurants": {
+    title: "Air Conditioning for Hospitality & Restaurants",
     description:
-      "Large-scale cold storage solutions for distribution centres and logistics hubs. High-throughput systems engineered for continuous operation, dock integration and scale flexibility.",
+      "Reliable cooling for commercial kitchens, dining areas, and hotel accommodations. 24/7 support to keep your guests comfortable and your venue running smoothly.",
   },
 };

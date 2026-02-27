@@ -8,32 +8,32 @@ const steps = [
   {
     num: "1",
     title: "You Call",
-    desc: "24/7 hotline — speak to a real technician, not a call centre.",
+    desc: "24/7 hotline — speak to a real HVAC technician, not a call centre.",
   },
   {
     num: "2",
     title: "We Dispatch",
-    desc: "Nearest qualified tech dispatched within minutes.",
+    desc: "Nearest qualified technician dispatched promptly.",
   },
   {
     num: "3",
     title: "Diagnose",
-    desc: "On-site fault diagnosis with full transparency on costs.",
+    desc: "On-site fault diagnosis with full transparency on costs before work begins.",
   },
   {
     num: "4",
-    title: "Repair",
-    desc: "Fix completed on first visit 98% of the time.",
+    title: "Repair or Install",
+    desc: "Work completed on first visit where possible, for all major brands.",
   },
   {
     num: "5",
     title: "Test & Certify",
-    desc: "System tested to spec with compliance documentation.",
+    desc: "System tested and signed off with compliance documentation.",
   },
   {
     num: "6",
-    title: "Monitor",
-    desc: "Optional smart monitoring to prevent future breakdowns.",
+    title: "Ongoing Support",
+    desc: "Optional preventive maintenance plan to keep your system running at peak efficiency.",
   },
 ];
 

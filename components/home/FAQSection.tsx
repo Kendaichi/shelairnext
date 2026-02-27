@@ -11,27 +11,27 @@ import ScrollReveal from "@/components/ScrollReveal";
 const faqs = [
   {
     q: "How quickly can you respond to an emergency breakdown?",
-    a: "We offer 24/7 emergency call-outs with an average response time of 2 hours across Brisbane, Gold Coast and SE Queensland. For critical systems, we prioritise same-hour dispatch.",
+    a: "We offer 24/7 emergency call-outs across Brisbane, Gold Coast and Sunshine Coast. Call 07 3204 9511 and speak directly with a qualified HVAC technician.",
   },
   {
-    q: "Do you service all refrigeration brands?",
-    a: "Yes. Our technicians are trained and equipped to service, repair, and maintain all major commercial refrigeration brands including Bitzer, Copeland, Danfoss, Daikin, and more.",
+    q: "Do you service all air conditioning brands?",
+    a: "Yes. Our technicians are trained and equipped to service, repair, and install all major AC brands including Panasonic, Daikin, Mitsubishi Electric, Fujitsu, Samsung, LG, Toshiba, and more.",
   },
   {
     q: "What does a preventative maintenance plan include?",
-    a: "Our plans include scheduled servicing visits, filter and component checks, refrigerant level monitoring, energy efficiency audits, 24/7 remote monitoring, and priority emergency response.",
+    a: "Our plans include scheduled servicing visits, filter and component checks, refrigerant level monitoring, energy efficiency assessments, and priority emergency response with discounted repair rates for contract customers.",
   },
   {
-    q: "Can you help us pass a HACCP or food safety audit?",
-    a: "Yes. While most of our work is repairs and maintenance, we also design, fabricate, and install custom HACCP-compliant cold rooms. Contact us for a site inspection and quote.",
+    q: "Do you offer a workmanship guarantee?",
+    a: "Yes. Every installation is backed by our 5-year workmanship guarantee, giving you complete peace of mind that the job is done right.",
   },
   {
-    q: "Do you also build new cold rooms?",
-    a: "Yes. Our modular systems are designed for easy expansion. We can also retrofit existing cold rooms with upgraded insulation, compressors, and smart monitoring.",
+    q: "Do you provide free quotes?",
+    a: "Yes — we provide no-obligation quotes with $0 upfront. Interest-free finance options are also available. Contact us to arrange a site inspection.",
   },
   {
     q: "What areas do you service?",
-    a: "We service Brisbane, Gold Coast, Sunshine Coast and SE Queensland. For large-scale or national clients, we can mobilise teams across Australia.",
+    a: "We service Brisbane, the Gold Coast, and the Sunshine Coast. Our main depot is in Deception Bay, with teams across the region for fast response times.",
   },
 ];
 
@@ -43,7 +43,7 @@ const FAQSection = () => (
           Frequently Asked Questions
         </h2>
         <p className="text-muted-foreground text-lg">
-          Common questions about our refrigeration services.
+          Common questions about our air conditioning services.
         </p>
       </ScrollReveal>
       <Accordion type="single" collapsible className="space-y-3">

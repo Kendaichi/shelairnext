@@ -49,7 +49,7 @@ const Contact = () => (
           </div>
           <Button asChild size="lg" variant="secondary" className="shrink-0">
             <a href="tel:1300000000">
-              <Phone className="w-4 h-4 mr-2" /> 1300 227 600
+              <Phone className="w-4 h-4 mr-2" /> 07 3204 9511
             </a>
           </Button>
         </motion.div>
@@ -90,7 +90,7 @@ const Contact = () => (
                     href="tel:1300000000"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    1300 227 600
+                    07 3204 9511
                   </a>
                 </div>
               </motion.div>
@@ -104,10 +104,10 @@ const Contact = () => (
                 <div>
                   <div className="font-semibold mb-1">Email</div>
                   <a
-                    href="mailto:info@acrorefrigeration.com.au"
+                    href="mailto:info@shelair.com.au"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    info@acrorefrigeration.com.au
+                    info@shelair.com.au
                   </a>
                 </div>
               </motion.div>

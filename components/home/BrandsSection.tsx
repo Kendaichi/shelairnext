@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Wrench } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
 const fadeUp: Variants = {
@@ -20,28 +20,27 @@ const cardVariant: Variants = {
 
 const brands = [
   {
-    slug: "bitzer",
-    name: "Bitzer",
-    desc: "Semi-hermetic reciprocating and screw compressor repairs, overhauls and preventative maintenance.",
-    speciality: "Compressors",
+    slug: "panasonic",
+    name: "Panasonic",
+    desc: "Energy-efficient inverter systems with industry-leading reliability. Shelair's preferred brand for commercial installations.",
+    speciality: "Preferred Supplier",
   },
   {
-    slug: "copeland",
-    name: "Copeland",
-    desc: "Scroll and semi-hermetic compressor diagnostics, replacement and efficiency optimisation.",
-    speciality: "Compressors",
+    slug: "daikin",
+    name: "Daikin",
+    desc: "Premium split systems and VRV multi-zone installations for commercial environments.",
+    speciality: "Split & VRV Systems",
   },
   {
-    slug: "danfoss",
-    name: "Danfoss",
-    desc: "Expansion valves, electronic controllers, pressure controls and variable speed drive repairs.",
-    speciality: "Controls & Valves",
+    slug: "mitsubishi",
+    name: "Mitsubishi Electric",
+    desc: "High-performance heat pump and ducted systems ideal for offices and retail.",
+    speciality: "Ducted & Heat Pump",
   },
 ];
 
 const otherBrands = [
-  "Daikin", "Carrier", "Heatcraft", "Embraco", "Tecumseh",
-  "Hussmann", "Reflex", "Kirloskar", "Panasonic", "LG Commercial",
+  "Fujitsu", "Samsung", "LG", "Toshiba", "Carrier", "Actron", "Hitachi", "Kelvinator", "Brivis", "Temperzone",
 ];
 
 const BrandsSection = () => (
@@ -55,14 +54,14 @@ const BrandsSection = () => (
         viewport={{ once: true }}
       >
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">
-          <Wrench className="w-3.5 h-3.5" /> Brand Specialists
+          <Star className="w-3.5 h-3.5" /> Brand Specialists
         </div>
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          All Major Brands. One Expert Team.
+          Our Trusted Brands — Preferred Supplier: Panasonic
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          We service and repair every major commercial refrigeration brand —
-          from compressor overhauls to control system diagnostics.
+          We install and service every major air conditioning brand — from split
+          systems to full commercial VRV and ducted installations.
         </p>
       </motion.div>
 
@@ -84,7 +83,7 @@ const BrandsSection = () => (
             >
               <div className="flex items-start justify-between mb-5">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Wrench className="w-6 h-6 text-primary" />
+                  <Star className="w-6 h-6 text-primary" />
                 </div>
                 <span className="text-xs font-semibold text-muted-foreground bg-secondary px-2.5 py-1 rounded-full">
                   {brand.speciality}

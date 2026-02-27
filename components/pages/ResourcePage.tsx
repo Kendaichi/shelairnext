@@ -129,7 +129,7 @@ const ResourcePage = () => {
                   <Link href="/contact">Get a Quote <ArrowRight className="w-4 h-4 ml-2" /></Link>
                 </Button>
                 <Button asChild variant="outline">
-                  <a href="tel:1300227600">Call 1300 227 600</a>
+                  <a href="tel:0732049511">Call 07 3204 9511</a>
                 </Button>
               </div>
             </motion.div>

@@ -23,39 +23,39 @@ const cardVariant: Variants = {
 
 const featuredBrands = [
   {
-    slug: "bitzer",
-    name: "Bitzer",
-    desc: "Semi-hermetic reciprocating and screw compressor repairs, overhauls and preventative maintenance.",
-    speciality: "Compressors",
-    detail: "One of the world's leading compressor manufacturers — trusted in cold rooms, supermarkets and industrial facilities across Australia.",
+    slug: "panasonic",
+    name: "Panasonic",
+    desc: "Installation, servicing and repairs across the full Panasonic commercial and residential AC range.",
+    speciality: "Preferred Supplier",
+    detail: "Shelair's preferred brand — known for industry-leading energy efficiency, inverter technology and long-term reliability across split, multi-split and ducted systems.",
   },
   {
-    slug: "copeland",
-    name: "Copeland",
-    desc: "Scroll and semi-hermetic compressor diagnostics, replacement and efficiency optimisation.",
-    speciality: "Compressors",
-    detail: "Widely used scroll and semi-hermetic compressors found in everything from supermarket display cases to large cold rooms.",
+    slug: "daikin",
+    name: "Daikin",
+    desc: "Split systems, ducted, cassette and VRV multi-zone system installation, servicing and repairs.",
+    speciality: "Split & Ducted",
+    detail: "One of the world's most trusted HVAC brands — Daikin's VRV and inverter systems are widely used in commercial buildings, offices and retail across Australia.",
   },
   {
-    slug: "danfoss",
-    name: "Danfoss",
-    desc: "Expansion valves, electronic controllers, pressure controls and variable speed drive repairs.",
-    speciality: "Controls & Valves",
-    detail: "Global leader in refrigeration controls, valves and drives found in virtually every commercial refrigeration system.",
+    slug: "mitsubishi",
+    name: "Mitsubishi Electric",
+    desc: "High-performance heat pump, split system and ducted AC installation and servicing.",
+    speciality: "Heat Pumps & Ducted",
+    detail: "Mitsubishi Electric's M-Series and City Multi systems are renowned for quiet operation, precise temperature control and energy efficiency in commercial environments.",
   },
 ];
 
 const otherBrands = [
-  { name: "Daikin", category: "Refrigeration & HVAC" },
-  { name: "Carrier", category: "Refrigeration & HVAC" },
-  { name: "Heatcraft", category: "Refrigeration" },
-  { name: "Embraco", category: "Compressors" },
-  { name: "Tecumseh", category: "Compressors" },
-  { name: "Hussmann", category: "Display Cases" },
-  { name: "Reflex", category: "Controls" },
-  { name: "Kirloskar", category: "Compressors" },
-  { name: "Panasonic", category: "Refrigeration & HVAC" },
-  { name: "LG Commercial", category: "Refrigeration & HVAC" },
+  { name: "Fujitsu", category: "Split & Ducted" },
+  { name: "Samsung", category: "Split & Ducted" },
+  { name: "LG", category: "Split & Ducted" },
+  { name: "Toshiba", category: "Split & Ducted" },
+  { name: "Carrier", category: "Commercial HVAC" },
+  { name: "Actron", category: "Ducted Systems" },
+  { name: "Hitachi", category: "Split & Ducted" },
+  { name: "Kelvinator", category: "Residential & Light Commercial" },
+  { name: "Brivis", category: "Ducted & Evaporative" },
+  { name: "Temperzone", category: "Commercial HVAC" },
 ];
 
 const Brands = () => (
@@ -87,9 +87,9 @@ const Brands = () => (
             All Major Brands. One Expert Team.
           </motion.h1>
           <motion.p variants={fadeUp} className="text-lg text-muted-foreground">
-            We service and repair every major commercial refrigeration brand —
-            from compressor overhauls to control system diagnostics. If it's
-            refrigeration, we know it.
+            We install and service every major air conditioning brand — from
+            split system repairs to full commercial VRV installations. If it&apos;s
+            HVAC, we know it.
           </motion.p>
         </motion.div>
 
@@ -102,15 +102,15 @@ const Brands = () => (
         >
           <div>
             <h2 className="text-xl md:text-2xl font-extrabold text-primary-foreground mb-1">
-              Brand Equipment Failure?
+              AC System Failure?
             </h2>
             <p className="text-primary-foreground/80 text-sm">
-              Call now — average 2-hour response, 24/7 across Brisbane & SE Queensland.
+              Call now — fast response, 24/7 across Brisbane, Gold Coast & Sunshine Coast.
             </p>
           </div>
           <Button asChild size="lg" variant="secondary" className="shrink-0">
-            <a href="tel:1300227600">
-              <Phone className="w-4 h-4 mr-2" /> 1300 227 600
+            <a href="tel:0732049511">
+              <Phone className="w-4 h-4 mr-2" /> 07 3204 9511
             </a>
           </Button>
         </motion.div>
@@ -185,8 +185,8 @@ const Brands = () => (
             Also Servicing These Brands
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our technicians are trained across the full range of commercial refrigeration
-            equipment — whatever brand you run, we can help.
+            Our technicians are trained across the full range of major air conditioning
+            brands — whatever system you run, we can help.
           </p>
         </motion.div>
 
@@ -220,8 +220,8 @@ const Brands = () => (
         >
           <h3 className="text-2xl font-extrabold mb-3">Don't See Your Brand?</h3>
           <p className="text-muted-foreground leading-relaxed mb-6 max-w-xl mx-auto">
-            We service and repair virtually all commercial refrigeration brands. If you don't
-            see your equipment listed, get in touch — chances are we've worked on it before.
+            We install and service virtually all major air conditioning brands. If you don&apos;t
+            see your system listed, get in touch — chances are we&apos;ve worked on it before.
           </p>
           <Button asChild size="lg">
             <Link href="/contact">

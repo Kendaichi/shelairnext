@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,18 +16,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://acrorefrigeration.com.au"),
+  metadataBase: new URL("https://shelair.com.au"),
+  icons: { icon: "/favicon.png" },
   title: {
-    template: "%s | Acro Refrigeration",
-    default: "Acro Refrigeration | Commercial Refrigeration Repair & Maintenance Brisbane",
+    template: "%s | Shelair",
+    default: "Shelair | Air Conditioning Installation & Service Brisbane, Gold Coast & Sunshine Coast",
   },
   description:
-    "24/7 emergency repairs, preventative maintenance plans and cold room builds for commercial refrigeration systems. Fast response, HACCP-certified. Serving Brisbane & SE Queensland.",
-  authors: [{ name: "Acro Refrigeration" }],
+    "Expert commercial air conditioning installation, service and maintenance across Brisbane, Gold Coast and Sunshine Coast. 30+ years experience. 5-year workmanship guarantee. Licensed HVAC technicians.",
+  authors: [{ name: "Shelair" }],
   openGraph: {
     type: "website",
-    siteName: "Acro Refrigeration",
-    images: [{ url: "/og-image.jpg", alt: "Acro Refrigeration" }],
+    siteName: "Shelair",
+    images: [{ url: "/og-image.jpg", alt: "Shelair" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -40,7 +43,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <main className="flex-1 pt-16 md:pt-20">{children}</main>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );

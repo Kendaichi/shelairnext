@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Commercial Refrigeration Repairs ${city.name}`,
     description: city.regionDescription,
-    alternates: { canonical: `https://acrorefrigeration.com.au/locations/${citySlug}` },
-    openGraph: { url: `https://acrorefrigeration.com.au/locations/${citySlug}` },
+    alternates: { canonical: `https://shelair.com.au/locations/${citySlug}` },
+    openGraph: { url: `https://shelair.com.au/locations/${citySlug}` },
   };
 }
 
@@ -29,11 +29,11 @@ export default async function CityPageRoute({ params }: Props) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Acro Refrigeration",
+    name: "Shelair",
     description: city.regionDescription,
-    url: "https://acrorefrigeration.com.au",
-    telephone: "+611300227600",
-    email: "service@acrorefrigeration.com.au",
+    url: "https://shelair.com.au",
+    telephone: "+61732049511",
+    email: "service@shelair.com.au",
     areaServed: {
       "@type": "City",
       name: city.name,
@@ -50,16 +50,16 @@ export default async function CityPageRoute({ params }: Props) {
       closes: "17:00",
     },
     priceRange: "$$",
-    sameAs: ["https://acrorefrigeration.com.au"],
+    sameAs: ["https://shelair.com.au"],
   };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://acrorefrigeration.com.au" },
-      { "@type": "ListItem", position: 2, name: "Locations", item: "https://acrorefrigeration.com.au/locations" },
-      { "@type": "ListItem", position: 3, name: city.name, item: `https://acrorefrigeration.com.au/locations/${citySlug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://shelair.com.au" },
+      { "@type": "ListItem", position: 2, name: "Locations", item: "https://shelair.com.au/locations" },
+      { "@type": "ListItem", position: 3, name: city.name, item: `https://shelair.com.au/locations/${citySlug}` },
     ],
   };
 

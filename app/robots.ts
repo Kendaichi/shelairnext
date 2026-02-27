@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "facebookexternalhit", allow: "/" },
       { userAgent: "*", allow: "/" },
     ],
-    sitemap: "https://acrorefrigeration.com.au/sitemap.xml",
+    sitemap: "https://shelair.com.au/sitemap.xml",
   };
 }

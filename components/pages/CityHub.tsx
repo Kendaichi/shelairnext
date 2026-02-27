@@ -51,14 +51,14 @@ const CityHub = () => {
               <MapPin className="w-3.5 h-3.5" /> {city.name}
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-              Commercial Refrigeration Repairs {city.name}
+              Air Conditioning Installation & Service {city.name}
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
               {city.regionDescription}
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg">
-                <a href="tel:1300227600"><Phone className="w-4 h-4 mr-2" /> 1300 227 600</a>
+                <a href="tel:0732049511"><Phone className="w-4 h-4 mr-2" /> 07 3204 9511</a>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link href="/contact">Get a Quote <ArrowRight className="w-4 h-4 ml-2" /></Link>

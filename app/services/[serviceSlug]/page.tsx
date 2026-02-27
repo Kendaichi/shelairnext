@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: service.title,
     description: service.description,
-    alternates: { canonical: `https://acrorefrigeration.com.au/services/${serviceSlug}` },
-    openGraph: { url: `https://acrorefrigeration.com.au/services/${serviceSlug}` },
+    alternates: { canonical: `https://shelair.com.au/services/${serviceSlug}` },
+    openGraph: { url: `https://shelair.com.au/services/${serviceSlug}` },
   };
 }
 
@@ -40,9 +40,9 @@ export default async function ServicePageRoute({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://acrorefrigeration.com.au" },
-      { "@type": "ListItem", position: 2, name: "Services", item: "https://acrorefrigeration.com.au/services" },
-      { "@type": "ListItem", position: 3, name: service.title, item: `https://acrorefrigeration.com.au/services/${serviceSlug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://shelair.com.au" },
+      { "@type": "ListItem", position: 2, name: "Services", item: "https://shelair.com.au/services" },
+      { "@type": "ListItem", position: 3, name: service.title, item: `https://shelair.com.au/services/${serviceSlug}` },
     ],
   };
 

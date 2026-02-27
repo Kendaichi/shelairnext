@@ -149,7 +149,7 @@ const Process = () => (
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <Button asChild size="lg" className="text-base px-8">
-            <a href="tel:1300227600">
+            <a href="tel:0732049511">
               <Phone className="w-4 h-4 mr-2" /> Call Now — 24/7{" "}
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>

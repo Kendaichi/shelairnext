@@ -5,7 +5,7 @@ import { servicesData } from "@/lib/seo/services";
 import { industriesData } from "@/lib/seo/industries";
 import { brandsData } from "@/lib/seo/brands";
 
-const BASE_URL = "https://acrorefrigeration.com.au";
+const BASE_URL = "https://shelair.com.au";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

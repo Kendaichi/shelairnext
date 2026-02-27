@@ -12,7 +12,7 @@ export const resourcesData: Record<string, { title: string; description: string 
   "freshmart-cold-storage-case-study": {
     title: "FreshMart: 200sqm Multi-Temperature Cold Storage",
     description:
-      "Case study: Acro Refrigeration designs and builds a 200sqm multi-temperature cold storage facility for FreshMart, delivered two weeks ahead of schedule with full HACCP certification.",
+      "Case study: Shelair designs and builds a 200sqm multi-temperature cold storage facility for FreshMart, delivered two weeks ahead of schedule with full HACCP certification.",
   },
   "cold-room-insulation-guide": {
     title: "Choosing the Right Insulation for Your Cold Room",

@@ -3,9 +3,8 @@
 import {
   AlertTriangle,
   ThermometerSnowflake,
-  Ban,
-  TrendingDown,
   Clock,
+  TrendingDown,
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -13,22 +12,22 @@ const problems = [
   {
     icon: AlertTriangle,
     title: "Unexpected Breakdowns",
-    desc: "A failed compressor at 2am means thousands in spoiled stock by morning.",
+    desc: "A failed system on a 35°C day means staff and customers sweltering, and productivity grinding to a halt.",
   },
   {
     icon: ThermometerSnowflake,
-    title: "Temperature Drift",
-    desc: "Gradual temperature creep goes unnoticed until a health inspector flags it.",
+    title: "Poor Temperature Control",
+    desc: "Gradual performance decline goes unnoticed until energy bills spike or complaints roll in.",
   },
   {
     icon: Clock,
     title: "Slow Response Times",
-    desc: "Most contractors take 24–48 hours. Your cold chain can't wait that long.",
+    desc: "Most contractors take 24–48 hours. In Queensland's climate, your business can't wait that long.",
   },
   {
     icon: TrendingDown,
     title: "Rising Energy Bills",
-    desc: "Poorly maintained systems consume up to 40% more power than they should.",
+    desc: "Poorly maintained HVAC systems consume up to 40% more power than a properly serviced unit.",
   },
 ];
 
@@ -37,11 +36,11 @@ const ProblemSection = () => (
     <div className="container-narrow">
       <ScrollReveal className="text-center mb-10 md:mb-16">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          What Happens When Your Refrigeration Fails?
+          What Happens When Your Air Conditioning Fails?
         </h2>
         <p className="text-dark-foreground/60 text-lg max-w-2xl mx-auto">
-          Every hour of downtime costs Australian businesses hundreds —
-          sometimes thousands — in lost revenue and stock.
+          Every hour of downtime in Brisbane's heat costs your business in
+          comfort, productivity — and sometimes equipment.
         </p>
       </ScrollReveal>
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">

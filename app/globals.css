@@ -7,55 +7,59 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 12%;
+    --foreground: 220 30% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 12%;
+    --card-foreground: 220 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
+    --popover-foreground: 220 30% 12%;
 
-    --primary: 0 73% 40%;
+    /* Royal blue — main swoosh wave from logo */
+    --primary: 213 75% 44%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 12%;
+    /* Light blue-grey for secondary surfaces */
+    --secondary: 213 30% 96%;
+    --secondary-foreground: 220 30% 12%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 213 20% 95%;
+    --muted-foreground: 220 15% 44%;
 
-    --accent: 0 72% 57%;
+    /* Cyan/sky accent — lighter wave tips from logo */
+    --accent: 197 88% 44%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 73% 40%;
+    --border: 213 25% 88%;
+    --input: 213 25% 88%;
+    --ring: 213 75% 44%;
 
     --radius: 0.5rem;
 
-    --surface: 0 0% 98%;
-    --surface-foreground: 0 0% 25%;
+    --surface: 213 30% 98%;
+    --surface-foreground: 220 30% 25%;
 
-    --hero-gradient: linear-gradient(135deg, hsl(0 73% 40%) 0%, hsl(0 50% 25%) 100%);
+    /* Deep navy → royal blue gradient */
+    --hero-gradient: linear-gradient(135deg, hsl(220 68% 22%) 0%, hsl(213 75% 44%) 100%);
     --card-shadow: 0 1px 3px 0 rgba(0,0,0,0.06), 0 1px 2px -1px rgba(0,0,0,0.06);
     --card-shadow-hover: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
-    --shadow-elevated: 0 20px 40px -12px rgba(179,27,27,0.15);
+    --shadow-elevated: 0 20px 40px -12px rgba(22, 96, 200, 0.22);
 
-    /* Footer dark section */
-    --dark-bg: 0 0% 8%;
-    --dark-bg-foreground: 0 0% 95%;
+    /* Footer dark section — deep navy from logo */
+    --dark-bg: 220 60% 10%;
+    --dark-bg-foreground: 213 30% 94%;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-background: 213 30% 98%;
+    --sidebar-foreground: 220 25% 26%;
+    --sidebar-primary: 213 75% 44%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 0 73% 40%;
+    --sidebar-accent: 213 30% 94%;
+    --sidebar-accent-foreground: 220 30% 12%;
+    --sidebar-border: 213 25% 88%;
+    --sidebar-ring: 213 75% 44%;
   }
 }
 

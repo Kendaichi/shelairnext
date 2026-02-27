@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Services from "@/components/pages/Services";
 
 export const metadata: Metadata = {
-  title: "Commercial Refrigeration Services",
+  title: "Our Services",
   description:
-    "End-to-end commercial refrigeration services including cold room construction, system installation, HACCP compliance, smart monitoring and 24/7 emergency repairs across Brisbane & SE Queensland.",
-  alternates: { canonical: "https://acrorefrigeration.com.au/services" },
-  openGraph: { url: "https://acrorefrigeration.com.au/services" },
+    "Commercial air conditioning installation, service & repairs, cold room hire and preventative maintenance across Brisbane, Gold Coast and Sunshine Coast.",
+  alternates: { canonical: "https://shelair.com.au/services" },
+  openGraph: { url: "https://shelair.com.au/services" },
 };
 
 export default function ServicesPage() {

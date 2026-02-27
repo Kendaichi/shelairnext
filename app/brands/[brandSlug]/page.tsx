@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${brand.name} Compressor Repairs & Servicing`,
     description: brand.description,
-    alternates: { canonical: `https://acrorefrigeration.com.au/brands/${brandSlug}` },
-    openGraph: { url: `https://acrorefrigeration.com.au/brands/${brandSlug}` },
+    alternates: { canonical: `https://shelair.com.au/brands/${brandSlug}` },
+    openGraph: { url: `https://shelair.com.au/brands/${brandSlug}` },
   };
 }
 

@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: resource.title,
     description: resource.description,
-    alternates: { canonical: `https://acrorefrigeration.com.au/resources/${resourceSlug}` },
-    openGraph: { url: `https://acrorefrigeration.com.au/resources/${resourceSlug}`, type: "article" },
+    alternates: { canonical: `https://shelair.com.au/resources/${resourceSlug}` },
+    openGraph: { url: `https://shelair.com.au/resources/${resourceSlug}`, type: "article" },
   };
 }
 
@@ -31,20 +31,20 @@ export default async function ResourcePageRoute({ params }: Props) {
     "@type": "Article",
     headline: resource.title,
     description: resource.description,
-    url: `https://acrorefrigeration.com.au/resources/${resourceSlug}`,
+    url: `https://shelair.com.au/resources/${resourceSlug}`,
     author: {
       "@type": "Organization",
-      name: "Acro Refrigeration",
-      url: "https://acrorefrigeration.com.au",
+      name: "Shelair",
+      url: "https://shelair.com.au",
     },
     publisher: {
       "@type": "Organization",
-      name: "Acro Refrigeration",
-      url: "https://acrorefrigeration.com.au",
+      name: "Shelair",
+      url: "https://shelair.com.au",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://acrorefrigeration.com.au/resources/${resourceSlug}`,
+      "@id": `https://shelair.com.au/resources/${resourceSlug}`,
     },
   };
 
@@ -52,9 +52,9 @@ export default async function ResourcePageRoute({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://acrorefrigeration.com.au" },
-      { "@type": "ListItem", position: 2, name: "Resources", item: "https://acrorefrigeration.com.au/resources" },
-      { "@type": "ListItem", position: 3, name: resource.title, item: `https://acrorefrigeration.com.au/resources/${resourceSlug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://shelair.com.au" },
+      { "@type": "ListItem", position: 2, name: "Resources", item: "https://shelair.com.au/resources" },
+      { "@type": "ListItem", position: 3, name: resource.title, item: `https://shelair.com.au/resources/${resourceSlug}` },
     ],
   };
 

@@ -8,28 +8,24 @@ import heroImg from "@/assets/hero-coldroom.jpg";
 
 const floatingStats = [
   {
-    value: "HACCP-Certified",
-    label: "HACCP Certified",
-    // Straddles the top-left corner — half outside the image
+    value: "5-Year",
+    label: "Workmanship Guarantee",
     className: "absolute top-14 -right-10",
     motionStyle: { translateY: "-50%" },
     delay: 0.9,
     pulseDelay: 0.9,
   },
   {
-    value: "50+",
+    value: "30+",
     label: "Years Experience",
-
-    // Straddles the right-middle edge — half outside the image
     className: "absolute left-2",
     motionStyle: { top: "50%", translateX: "-50%", translateY: "-50%" },
     delay: 0.7,
     pulseDelay: 0,
   },
   {
-    value: "24/7 Support",
-    label: "Emergency Response",
-    // Straddles the bottom-right corner — half outside the image
+    value: "24/7",
+    label: "Emergency Service",
     className: "absolute bottom-16 -right-10",
     motionStyle: { translateY: "50%" },
     delay: 1.1,
@@ -69,25 +65,27 @@ const Hero = () => {
               variants={itemVariants}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-6 cursor-default"
             >
-              Australia's Trusted Refrigeration Experts
+              Australia's Trusted HVAC & Air Conditioning Experts
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6"
             >
-              Commercial Refrigeration
-              <span className="text-primary"> Repair & Maintenance</span>:
-              Keeping Your Cold Chain Unbroken 24/7
+              Air Conditioning Installation & Service –
+              <span className="text-primary">
+                {" "}
+                Brisbane, Gold Coast & Sunshine Coast
+              </span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-md"
             >
-              Breakdowns don't wait — neither do we. Fast emergency repairs,
-              preventative maintenance plans, and expert servicing for all
-              commercial refrigeration systems.
+              Design, installation, and maintenance across Brisbane, the Gold
+              Coast & the Sunshine Coast. Backed by a 5-year workmanship
+              guarantee.
             </motion.p>
 
             <motion.div
@@ -100,7 +98,7 @@ const Hero = () => {
                 className="text-base px-8 w-full sm:w-auto"
               >
                 <Link href="/contact">
-                  Get a Quote <ArrowRight className="w-4 h-4 ml-2" />
+                  Get a Free Quote <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
               <Button
@@ -130,13 +128,12 @@ const Hero = () => {
             <div className="rounded-2xl overflow-hidden shadow-2xl shadow-foreground/5">
               <img
                 src={heroImg.src}
-                alt="Commercial cold room installation by Acro Refrigeration"
+                alt="Commercial air conditioning installation by Shelair"
                 className="w-full h-[240px] sm:h-[320px] lg:h-[500px] object-cover"
               />
             </div>
 
             {floatingStats.map((stat) => (
-              // Outer: handles absolute positioning + entrance animation
               <motion.div
                 key={stat.label}
                 className={`hidden lg:block ${stat.className} z-10`}
@@ -149,7 +146,6 @@ const Hero = () => {
                   ease: "backOut",
                 }}
               >
-                {/* Inner: continuous up/down float, staggered per card */}
                 <motion.div
                   className="bg-background/85 backdrop-blur-md rounded-xl border border-border px-4 py-3 shadow-elevated text-center min-w-[110px]"
                   animate={{ y: [0, -10, 0] }}

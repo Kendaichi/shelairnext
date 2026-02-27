@@ -2,34 +2,36 @@ import type { Metadata } from "next";
 import Index from "@/components/pages/Index";
 
 export const metadata: Metadata = {
-  title: "Commercial Refrigeration Repair & Maintenance Brisbane",
+  title: "Air Conditioning Installation & Service Brisbane, Gold Coast & Sunshine Coast",
   description:
-    "24/7 emergency repairs, preventative maintenance plans and cold room builds for commercial refrigeration systems. Fast response, HACCP-certified. Serving Brisbane & SE Queensland.",
+    "Expert commercial air conditioning installation, service and maintenance across Brisbane, Gold Coast and Sunshine Coast. 30+ years experience. 5-year workmanship guarantee. Licensed HVAC technicians.",
   alternates: {
-    canonical: "https://acrorefrigeration.com.au/",
+    canonical: "https://shelair.com.au/",
   },
   openGraph: {
-    url: "https://acrorefrigeration.com.au/",
+    url: "https://shelair.com.au/",
   },
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Acro Refrigeration",
+  name: "Shelair",
   description:
-    "Australia's trusted commercial refrigeration contractor. 24/7 emergency repairs, preventative maintenance plans and custom cold room builds. HACCP-certified.",
-  url: "https://acrorefrigeration.com.au",
-  telephone: "1300227600",
-  email: "info@acrorefrigeration.com.au",
+    "Brisbane's trusted HVAC & air conditioning experts. Commercial air conditioning installation, service and maintenance across Brisbane, the Gold Coast and the Sunshine Coast. Part of the HVACR Group.",
+  url: "https://shelair.com.au",
+  telephone: "0732049511",
+  email: "info@shelair.com.au",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Brisbane",
+    streetAddress: "Unit 3, 9-11 Imboon Street",
+    addressLocality: "Deception Bay",
     addressRegion: "QLD",
+    postalCode: "4508",
     addressCountry: "AU",
   },
-  openingHours: "Mo-Fr 07:00-17:00",
-  areaServed: ["Brisbane", "Gold Coast", "Sunshine Coast", "SE Queensland", "Australia"],
+  openingHours: "Mo-Fr 07:30-16:30",
+  areaServed: ["Brisbane", "Gold Coast", "Sunshine Coast", "SE Queensland"],
   priceRange: "$$",
 };
 

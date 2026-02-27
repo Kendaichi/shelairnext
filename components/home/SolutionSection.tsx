@@ -8,19 +8,19 @@ const steps = [
     icon: ClipboardList,
     step: "01",
     title: "Emergency Repairs",
-    desc: "24/7 call-out service with an average 2-hour response time. We diagnose and fix on the first visit — 98% of the time.",
+    desc: "24/7 call-out service across Brisbane, Gold Coast & Sunshine Coast. Fast diagnosis and same-visit fixes for all brands.",
   },
   {
     icon: Wrench,
     step: "02",
     title: "Preventative Maintenance",
-    desc: "Scheduled servicing plans that catch issues before they become costly breakdowns. Extend system life and cut energy costs.",
+    desc: "Scheduled HVAC maintenance plans that reduce downtime, extend equipment life, and unlock priority service + discounted repair rates for contract customers.",
   },
   {
     icon: Settings,
     step: "03",
-    title: "Cold Room Builds",
-    desc: "When you need new capacity, our in-house team designs, fabricates and installs HACCP-compliant cold rooms built to last.",
+    title: "Air Conditioning Installation",
+    desc: "Full commercial AC design, supply, and installation. Every project backed by our 5-year workmanship guarantee.",
   },
 ];
 
@@ -32,11 +32,11 @@ const SolutionSection = () => (
           How We Work
         </div>
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          One Team for Every Refrigeration Need
+          One Team for Every HVAC Need
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          From 2am breakdowns to long-term maintenance plans — and new builds
-          when you're ready to grow.
+          From emergency breakdowns to long-term maintenance plans — and new
+          installations when you're ready to upgrade.
         </p>
       </ScrollReveal>
       <div className="grid md:grid-cols-3 gap-5 md:gap-8">
