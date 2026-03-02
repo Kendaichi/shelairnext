@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -126,10 +127,12 @@ const Hero = () => {
             }}
           >
             <div className="rounded-2xl overflow-hidden shadow-2xl shadow-foreground/5">
-              <img
-                src={heroImg.src}
+              <Image
+                src={heroImg}
                 alt="Commercial air conditioning installation by Shelair"
                 className="w-full h-[240px] sm:h-[320px] lg:h-[500px] object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
               />
             </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -125,10 +126,12 @@ const Navbar = () => {
           href="/"
           className="flex items-center gap-2 font-extrabold text-xl tracking-tight"
         >
-          <img
-            src={shelairLogo.src}
+          <Image
+            src={shelairLogo}
             alt="Shelair"
             className="h-10 w-10 object-contain"
+            width={40}
+            height={40}
           />
           <span>Shelair</span>
         </Link>
