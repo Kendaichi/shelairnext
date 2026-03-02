@@ -35,12 +35,71 @@ const localBusinessSchema = {
   priceRange: "$$",
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How quickly can you respond to an emergency breakdown?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We offer 24/7 emergency response and aim to have a technician on-site within 2–4 hours for urgent breakdowns across Brisbane, Gold Coast and Sunshine Coast.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you service all air conditioning brands?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Our ARC-licensed technicians are experienced with all major brands including Daikin, Mitsubishi Electric, Fujitsu, Actron, Samsung, LG, Panasonic, Hitachi and more.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does a preventative maintenance plan include?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our maintenance plans include scheduled inspections, filter cleaning, coil checks, refrigerant level assessment, electrical checks and a full service report — typically twice yearly.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer a workmanship guarantee?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. All Shelair installations come with a 5-year workmanship guarantee in addition to any manufacturer warranty on parts and equipment.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide free quotes?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We provide free, no-obligation quotes for all new installations and major works. Contact us to arrange a site visit.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What areas do you service?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We service Brisbane, the Gold Coast and the Sunshine Coast, including surrounding suburbs across South East Queensland.",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Index />
     </>

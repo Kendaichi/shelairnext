@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Shelair",
-    images: [{ url: "/og-image.jpg", alt: "Shelair" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Shelair | Air Conditioning Installation & Service Brisbane, Gold Coast & Sunshine Coast" }],
   },
   twitter: {
     card: "summary_large_image",

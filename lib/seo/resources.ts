@@ -1,32 +1,44 @@
-export const resourcesData: Record<string, { title: string; description: string }> = {
-  "haccp-compliant-cold-rooms": {
-    title: "The Complete Guide to HACCP-Compliant Cold Rooms",
+export const resourcesData: Record<string, { title: string; description: string; datePublished: string; dateModified: string }> = {
+  "commercial-ac-system-guide": {
+    title: "How to Choose the Right Commercial Air Conditioning System",
     description:
-      "A complete guide to building HACCP-compliant cold rooms. Covers temperature requirements, documentation, panel specifications, drainage and audit preparation for commercial food businesses.",
+      "A practical guide to choosing commercial air conditioning systems. Compares split systems, ducted AC and VRF/VRV, explains sizing requirements and what to look for in brands and warranties.",
+    datePublished: "2026-02-01",
+    dateModified: "2026-02-01",
   },
-  "reduce-refrigeration-energy-costs": {
-    title: "How to Reduce Commercial Refrigeration Energy Costs by 30%",
+  "reduce-ac-energy-costs": {
+    title: "How to Reduce Commercial Air Conditioning Costs by Up to 40%",
     description:
-      "Proven strategies to reduce commercial refrigeration energy costs by up to 30%. Covers condenser maintenance, door seals, night blinds, system upgrades and smart monitoring for Brisbane businesses.",
+      "Proven strategies to reduce commercial air conditioning energy costs by up to 40%. Covers thermostat settings, inverter upgrades, filter maintenance, coil cleaning, zoning and scheduling for Brisbane businesses.",
+    datePublished: "2026-01-15",
+    dateModified: "2026-01-15",
   },
-  "freshmart-cold-storage-case-study": {
-    title: "FreshMart: 200sqm Multi-Temperature Cold Storage",
+  "southport-medical-centre-case-study": {
+    title: "Southport Medical Centre: Full VRF Upgrade Across Three Floors",
     description:
-      "Case study: Shelair designs and builds a 200sqm multi-temperature cold storage facility for FreshMart, delivered two weeks ahead of schedule with full HACCP certification.",
+      "Case study: Shelair replaces a 14-year-old ducted AC system at a Southport medical centre with a Daikin VRF system, staged across five weekends with zero clinic disruption and 38% projected energy savings.",
+    datePublished: "2025-12-01",
+    dateModified: "2025-12-01",
   },
-  "cold-room-insulation-guide": {
-    title: "Choosing the Right Insulation for Your Cold Room",
+  "split-system-vs-ducted": {
+    title: "Split System vs Ducted Air Conditioning: Which Is Right for Your Business?",
     description:
-      "How to choose the right insulation for a commercial cold room. Compares polyurethane, polystyrene and PIR panels, explains R-values and thickness requirements for different temperature zones.",
+      "Split system vs ducted air conditioning for commercial spaces. Compares costs, flexibility, aesthetics and suitability by building type — with guidance on when VRF/VRV is the better option.",
+    datePublished: "2025-11-01",
+    dateModified: "2025-11-01",
   },
-  "cold-room-monthly-maintenance": {
-    title: "Cold Room Maintenance: What to Check Monthly",
+  "commercial-ac-maintenance-checklist": {
+    title: "Commercial AC Maintenance: What to Check Every Quarter",
     description:
-      "Monthly cold room maintenance checklist for commercial operators. Covers door seals, condenser coils, temperature logs, drainage, lighting and evaporator fans — with tips to prevent costly breakdowns.",
+      "Quarterly commercial air conditioning maintenance checklist for business owners and facilities managers. Covers filter checks, coil inspection, outdoor unit, controls review and when to call a professional.",
+    datePublished: "2025-10-01",
+    dateModified: "2025-10-01",
   },
-  "smart-monitoring-roi": {
-    title: "Smart Monitoring Systems: ROI for Commercial Refrigeration",
+  "inverter-ac-technology-guide": {
+    title: "Inverter vs Non-Inverter Air Conditioning: What Commercial Operators Need to Know",
     description:
-      "How IoT temperature monitoring pays for itself within 12 months for commercial refrigeration. Covers stock loss prevention, energy savings, HACCP compliance and emergency response improvements.",
+      "Inverter vs non-inverter air conditioning for commercial use. Explains how inverter technology works, quantifies energy savings, compares comfort levels and total cost of ownership for SE Queensland businesses.",
+    datePublished: "2025-09-15",
+    dateModified: "2025-09-15",
   },
 };

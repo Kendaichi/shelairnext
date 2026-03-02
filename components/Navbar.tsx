@@ -64,7 +64,7 @@ const dropdownMenus: Record<
 };
 
 const plainLinks = [
-  { label: "Careers", href: "/careers" },
+  // { label: "Careers", href: "/careers" },
   { label: "Shelair Insights", href: "/resources" },
   { label: "Contact Us", href: "/contact" },
 ];

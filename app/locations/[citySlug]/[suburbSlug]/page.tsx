@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import SuburbPage from "@/components/pages/SuburbPage";
 import { notFound } from "next/navigation";
-import { getSuburbBySlug, cities } from "@/lib/seo/locations";
+import { getSuburbBySlug, cities } from "@/data/locations";
 
 type Props = { params: Promise<{ citySlug: string; suburbSlug: string }> };
 

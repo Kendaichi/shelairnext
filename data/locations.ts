@@ -114,6 +114,15 @@ export const cities: CityData[] = [
         nearbySuburbs: ["North Lakes", "Kallangur", "Deception Bay", "Mango Hill"],
       },
       {
+        slug: "redcliffe",
+        name: "Redcliffe",
+        zone: "Northern Brisbane",
+        businessTypes: "Retail, hospitality, medical, residential",
+        venueTypes: ["Retail", "Hospitality", "Medical", "Residential"],
+        localContextText: "Redcliffe is a coastal peninsula suburb and one of Queensland's oldest towns, with a vibrant esplanade, busy retail strip and growing medical precinct. Shelair provides air conditioning installation and servicing for businesses and residents throughout the Redcliffe Peninsula.",
+        nearbySuburbs: ["Kippa-Ring", "Clontarf", "Deception Bay", "North Lakes"],
+      },
+      {
         slug: "kelvin-grove",
         name: "Kelvin Grove",
         zone: "Inner Brisbane",

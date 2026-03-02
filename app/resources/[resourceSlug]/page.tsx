@@ -42,6 +42,8 @@ export default async function ResourcePageRoute({ params }: Props) {
       name: "Shelair",
       url: "https://shelair.com.au",
     },
+    datePublished: resource.datePublished,
+    dateModified: resource.dateModified,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://shelair.com.au/resources/${resourceSlug}`,

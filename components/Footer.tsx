@@ -36,7 +36,8 @@ const Footer = () => (
               <Mail className="w-4 h-4" /> info@shelair.com.au
             </a>
             <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" /> Unit 3, 9–11 Imboon Street, Deception Bay QLD 4508
+              <MapPin className="w-4 h-4" /> Unit 3, 9–11 Imboon Street,
+              Deception Bay QLD 4508
             </span>
           </div>
           <div className="flex items-center gap-3 mt-6">
@@ -67,22 +68,36 @@ const Footer = () => (
           </h4>
           <ul className="space-y-2.5 text-sm text-dark-foreground/60">
             <li>
-              <Link href="/services/air-conditioning-installation" className="hover:text-primary transition-colors">
+              <Link
+                href="/services/air-conditioning-installation"
+                className="hover:text-primary transition-colors"
+              >
                 Air Conditioning Installation
               </Link>
             </li>
             <li>
-              <Link href="/services/air-conditioning-service-repairs" className="hover:text-primary transition-colors">
+              <Link
+                href="/services/air-conditioning-service-repairs"
+                className="hover:text-primary transition-colors"
+              >
                 Air Conditioning Service & Repairs
               </Link>
             </li>
             <li>
-              <a href="https://acrorefrigeration.com.au" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+              <a
+                href="https://acrorefrigeration.com.au"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+              >
                 Commercial Refrigeration
               </a>
             </li>
             <li>
-              <Link href="/services" className="hover:text-primary transition-colors">
+              <Link
+                href="/services"
+                className="hover:text-primary transition-colors"
+              >
                 Preventative Maintenance Plans
               </Link>
             </li>
@@ -95,27 +110,41 @@ const Footer = () => (
           </h4>
           <ul className="space-y-2.5 text-sm text-dark-foreground/60">
             <li>
-              <Link href="/about" className="hover:text-primary transition-colors">
+              <Link
+                href="/about"
+                className="hover:text-primary transition-colors"
+              >
                 About Shelair
               </Link>
             </li>
             <li>
-              <Link href="/resources" className="hover:text-primary transition-colors">
+              <Link
+                href="/resources"
+                className="hover:text-primary transition-colors"
+              >
                 Shelair Insights
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/careers" className="hover:text-primary transition-colors">
                 Careers
               </Link>
-            </li>
+            </li> */}
             <li>
-              <a href="https://hvacrgroup.com.au" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+              <a
+                href="https://hvacrgroup.com.au"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+              >
                 HVACR Group
               </a>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-primary transition-colors">
+              <Link
+                href="/contact"
+                className="hover:text-primary transition-colors"
+              >
                 Contact Us
               </Link>
             </li>
@@ -128,22 +157,34 @@ const Footer = () => (
           </h4>
           <ul className="space-y-2.5 text-sm text-dark-foreground/60">
             <li>
-              <Link href="/locations/brisbane" className="hover:text-primary transition-colors">
+              <Link
+                href="/locations/brisbane"
+                className="hover:text-primary transition-colors"
+              >
                 Brisbane
               </Link>
             </li>
             <li>
-              <Link href="/locations/gold-coast" className="hover:text-primary transition-colors">
+              <Link
+                href="/locations/gold-coast"
+                className="hover:text-primary transition-colors"
+              >
                 Gold Coast
               </Link>
             </li>
             <li>
-              <Link href="/locations/sunshine-coast" className="hover:text-primary transition-colors">
+              <Link
+                href="/locations/sunshine-coast"
+                className="hover:text-primary transition-colors"
+              >
                 Sunshine Coast
               </Link>
             </li>
             <li>
-              <Link href="/locations" className="hover:text-primary transition-colors">
+              <Link
+                href="/locations"
+                className="hover:text-primary transition-colors"
+              >
                 All Locations
               </Link>
             </li>
@@ -153,11 +194,14 @@ const Footer = () => (
 
       <div className="border-t border-dark-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-dark-foreground/40">
         <p>
-          © {new Date().getFullYear()} HVACR Pty Ltd. All rights reserved.
-          ABN 43 672 578 264
+          © {new Date().getFullYear()} HVACR Pty Ltd. All rights reserved. ABN
+          43 672 578 264
         </p>
         <div className="flex gap-6">
-          <Link href="/privacy" className="hover:text-primary transition-colors">
+          <Link
+            href="/privacy"
+            className="hover:text-primary transition-colors"
+          >
             Privacy Policy
           </Link>
           <Link href="/terms" className="hover:text-primary transition-colors">

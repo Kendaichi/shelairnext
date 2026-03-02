@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import CityHub from "@/components/pages/CityHub";
 import { notFound } from "next/navigation";
-import { getCityBySlug, cities } from "@/lib/seo/locations";
+import { getCityBySlug, cities } from "@/data/locations";
 
 type Props = { params: Promise<{ citySlug: string }> };
 

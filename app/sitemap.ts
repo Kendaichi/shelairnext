@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { cities } from "@/lib/seo/locations";
+import { cities } from "@/data/locations";
 import { resourcesData } from "@/lib/seo/resources";
 import { servicesData } from "@/lib/seo/services";
 import { industriesData } from "@/lib/seo/industries";
