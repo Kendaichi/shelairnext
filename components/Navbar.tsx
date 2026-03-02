@@ -235,6 +235,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
           className="lg:hidden p-2.5 -mr-1"
         >
           {mobileOpen ? (

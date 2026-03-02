@@ -42,9 +42,8 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { y: 24 },
   visible: {
-    opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const },
   },
@@ -118,8 +117,8 @@ const Hero = () => {
           {/* Right column — image + floating stat cards */}
           <motion.div
             className="relative pt-4 pb-6 lg:pt-8 lg:pb-10 lg:pr-16"
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ x: 40 }}
+            animate={{ x: 0 }}
             transition={{
               duration: 0.8,
               delay: 0.2,
