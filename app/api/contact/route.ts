@@ -7,7 +7,9 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
 
-const resend = new Resend(process.env.RESEND_API_KEY!);
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 interface ContactBody {
   firstName: string;
@@ -52,6 +54,11 @@ export async function POST(req: Request) {
     }
 
     // 2. Send notification email via Resend
+    if (!resend) {
+      console.warn("RESEND_API_KEY not set — skipping email notification");
+      return NextResponse.json({ success: true });
+    }
+
     const { error: emailError } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL!,
       to: process.env.CONTACT_NOTIFY_EMAIL!,
