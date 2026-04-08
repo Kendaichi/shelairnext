@@ -31,7 +31,7 @@ const cardVariant: Variants = {
   }),
 };
 
-const ProjectPage = ({ project }: { project: Project }) => {
+const ProjectPage = ({ project, related = [] }: { project: Project; related?: Project[] }) => {
   return (
     <Layout>
       {/* Breadcrumb */}
@@ -232,6 +232,50 @@ const ProjectPage = ({ project }: { project: Project }) => {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Projects */}
+      {related.length > 0 && (
+        <section className="section-padding bg-secondary">
+          <div className="container-narrow">
+            <motion.div className="mb-10" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <h2 className="text-3xl font-extrabold">More Projects</h2>
+            </motion.div>
+            <div className="grid md:grid-cols-3 gap-5">
+              {related.map((p, i) => (
+                <motion.div
+                  key={p.id}
+                  custom={i}
+                  variants={cardVariant}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.1 }}
+                >
+                  <Link
+                    href={`/projects/${p.slug}`}
+                    className="block bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 overflow-hidden group h-full"
+                  >
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+                          {p.type}
+                        </span>
+                        <span className="text-xs text-muted-foreground">{p.size}</span>
+                      </div>
+                      <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors duration-200">
+                        {p.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.description}</p>
+                      <span className="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                        View Project <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>

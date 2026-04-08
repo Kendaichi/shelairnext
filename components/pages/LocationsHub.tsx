@@ -4,9 +4,9 @@ import Layout from "@/components/Layout";
 import Link from "next/link";
 import { MapPin, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { cities } from "@/data/locations";
 import CTABanner from "@/components/home/CTABanner";
 import { motion, Variants } from "framer-motion";
+import type { LocationCity } from "@/lib/supabase/content";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -22,9 +22,8 @@ const cardVariant: Variants = {
   }),
 };
 
-const LocationsHub = () => (
+const LocationsHub = ({ cities }: { cities: LocationCity[] }) => (
   <Layout>
-    
 
     <section className="section-padding bg-background">
       <div className="container-narrow">
@@ -60,10 +59,10 @@ const LocationsHub = () => (
                 </div>
                 <h2 className="text-2xl font-extrabold mb-2">{city.name}</h2>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                  {city.regionDescription}
+                  {city.region_description}
                 </p>
                 <div className="flex flex-wrap gap-1.5 mb-6">
-                  {city.sampleSuburbs.map((s) => (
+                  {city.sample_suburbs.map((s) => (
                     <Badge key={s} variant="secondary" className="text-xs font-medium">
                       {s}
                     </Badge>

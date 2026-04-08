@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useParams, notFound } from "next/navigation";
+import Image from "next/image";
 import Layout from "@/components/Layout";
-import { getCityBySlug, cities } from "@/data/locations";
-import { MapPin, ArrowRight, Phone, Clock, Wrench, Users, CheckCircle } from "lucide-react";
+import { MapPin, ArrowRight, Phone, Clock, Wrench, Users, CheckCircle, BookOpen, FileText, Video } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import CTABanner from "@/components/home/CTABanner";
 import { motion, Variants } from "framer-motion";
+import type { LocationCity, Project } from "@/lib/supabase/content";
+import type { Post } from "@/lib/supabase/posts";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -26,22 +27,21 @@ const cardVariant: Variants = {
 
 const statIcons = [Clock, CheckCircle, Wrench, Users];
 
-const CityHub = () => {
-  const { citySlug } = useParams<{ citySlug: string }>();
-  const city = getCityBySlug(citySlug || "");
+function TypeIcon({ type }: { type: string }) {
+  if (type === "Guide") return <BookOpen className="w-3 h-3" />;
+  if (type === "Video") return <Video className="w-3 h-3" />;
+  return <FileText className="w-3 h-3" />;
+}
 
-  if (!city) notFound();
-
+const CityHub = ({ city, projects, posts }: { city: LocationCity; projects: Project[]; posts: Post[] }) => {
+  const suburbs = city.location_suburbs ?? [];
   const grouped = city.zones.map((zone) => ({
     zone,
-    suburbs: city.suburbs.filter((s) => s.zone === zone),
+    suburbs: suburbs.filter((s) => s.zone === zone),
   }));
-
-  const otherCities = cities.filter((c) => c.slug !== city.slug);
 
   return (
     <Layout>
-      
 
       {/* Hero */}
       <section className="section-padding bg-background">
@@ -54,7 +54,7 @@ const CityHub = () => {
               Air Conditioning Installation & Service {city.name}
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              {city.regionDescription}
+              {city.region_description}
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg">
@@ -69,34 +69,36 @@ const CityHub = () => {
       </section>
 
       {/* Stats */}
-      <section className="bg-secondary py-8 px-6">
-        <div className="container-narrow">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {city.stats.map((stat, i) => {
-              const Icon = statIcons[i];
-              return (
-                <motion.div
-                  key={stat.label}
-                  custom={i}
-                  variants={cardVariant}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.1 }}
-                  className="flex items-center gap-3"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <Icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-extrabold text-lg">{stat.value}</div>
-                    <div className="text-xs text-muted-foreground">{stat.label}</div>
-                  </div>
-                </motion.div>
-              );
-            })}
+      {city.stats?.length > 0 && (
+        <section className="bg-secondary py-8 px-6">
+          <div className="container-narrow">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {(city.stats as { label: string; value: string }[]).map((stat, i) => {
+                const Icon = statIcons[i] ?? Clock;
+                return (
+                  <motion.div
+                    key={stat.label}
+                    custom={i}
+                    variants={cardVariant}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    className="flex items-center gap-3"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-extrabold text-lg">{stat.value}</div>
+                      <div className="text-xs text-muted-foreground">{stat.label}</div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Coverage Zones */}
       <section className="section-padding bg-background">
@@ -118,71 +120,140 @@ const CityHub = () => {
             ))}
           </div>
 
-          {grouped.map((group, gi) => (
-            <motion.div
-              key={group.zone}
-              custom={gi}
-              variants={cardVariant}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-              className="mb-10"
-            >
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-primary" /> {group.zone}
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {group.suburbs.map((suburb) => (
-                  <Link
-                    key={suburb.slug}
-                    href={`/locations/${city.slug}/${suburb.slug}`}
-                    className="block bg-card rounded-xl p-5 border border-border shadow-sm hover:border-primary/20 group transition-colors"
-                  >
-                    <h4 className="font-bold mb-1 group-hover:text-primary transition-colors">
-                      {suburb.name}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">{suburb.businessTypes}</p>
-                  </Link>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Other regions */}
-      <section className="section-padding bg-secondary">
-        <div className="container-narrow">
-          <motion.div className="text-center mb-12" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <h2 className="text-2xl font-extrabold mb-2">Also Serving</h2>
-            <p className="text-muted-foreground">Explore our other service regions.</p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            {otherCities.map((c, i) => (
+          {grouped.map((group, gi) =>
+            group.suburbs.length > 0 && (
               <motion.div
-                key={c.slug}
-                custom={i}
+                key={group.zone}
+                custom={gi}
                 variants={cardVariant}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.1 }}
-                whileHover={{ y: -4 }}
+                className="mb-10"
               >
-                <Link
-                  href={`/locations/${c.slug}`}
-                  className="block bg-card rounded-2xl p-6 border border-border shadow-sm group hover:border-primary/20 h-full"
-                >
-                  <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">{c.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{c.regionDescription}</p>
-                  <span className="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
-                    View areas <ArrowRight className="w-4 h-4" />
-                  </span>
-                </Link>
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-primary" /> {group.zone}
+                </h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {group.suburbs.map((suburb) => (
+                    <Link
+                      key={suburb.slug}
+                      href={`/locations/${city.slug}/${suburb.slug}`}
+                      className="block bg-card rounded-xl p-5 border border-border shadow-sm hover:border-primary/20 group transition-colors"
+                    >
+                      <h4 className="font-bold mb-1 group-hover:text-primary transition-colors">
+                        {suburb.name}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">{suburb.business_types}</p>
+                    </Link>
+                  ))}
+                </div>
               </motion.div>
-            ))}
-          </div>
+            )
+          )}
         </div>
       </section>
+
+      {/* Recent Projects */}
+      {projects.length > 0 && (
+        <section className="section-padding bg-secondary">
+          <div className="container-narrow">
+            <motion.div className="text-center mb-12" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Recent Projects in {city.name}</h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                See how we&apos;ve helped businesses in {city.name} with their air conditioning needs.
+              </p>
+            </motion.div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {projects.map((p, i) => (
+                <motion.div key={p.id} custom={i} variants={cardVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
+                  <Link
+                    href={`/projects/${p.slug}`}
+                    className="block bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 overflow-hidden group h-full"
+                  >
+                    {p.image_url && (
+                      <div className="relative h-48 overflow-hidden">
+                        <Image
+                          src={p.image_url}
+                          alt={p.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">{p.type}</span>
+                        <span className="text-xs text-muted-foreground">{p.size}</span>
+                      </div>
+                      <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors duration-200">{p.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.description}</p>
+                      <span className="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                        View Case Study <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Helpful Resources */}
+      {posts.length > 0 && (
+        <section className="section-padding bg-background">
+          <div className="container-narrow">
+            <motion.div className="text-center mb-12" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Helpful Resources</h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Expert guides and articles on air conditioning.
+              </p>
+            </motion.div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {posts.map((a, i) => (
+                <motion.div key={a.slug} custom={i} variants={cardVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
+                  <Link
+                    href={`/resources/${a.slug}`}
+                    className="block bg-card rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow group h-full overflow-hidden"
+                  >
+                    {a.image_url && (
+                      <div className="relative w-full h-40 overflow-hidden">
+                        <Image
+                          src={a.image_url}
+                          alt={a.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full flex items-center gap-1">
+                          <TypeIcon type={a.type} /> {a.type}
+                        </span>
+                        <span className="text-xs text-muted-foreground">{a.date}</span>
+                      </div>
+                      <h3 className="font-bold mb-2 group-hover:text-primary transition-colors leading-snug">{a.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{a.description}</p>
+                      <span className="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Read More <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+            <motion.div className="text-center mt-10" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+              <Button asChild variant="outline" size="lg" className="cursor-pointer">
+                <Link href="/resources">View All Resources <ArrowRight className="w-4 h-4 ml-2" /></Link>
+              </Button>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       <CTABanner />
     </Layout>

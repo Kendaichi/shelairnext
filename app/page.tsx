@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Index from "@/components/pages/Index";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { withRetry } from "@/lib/retry";
+import { faqSection, testimonialsSection } from "@/data/home";
 import { getAllIndustries, getAllBrands, getAllOtherBrands } from "@/lib/supabase/content";
+
+export const revalidate = 600;
 
 export const metadata: Metadata = {
   title: "Air Conditioning Installation & Service Brisbane, Gold Coast & Sunshine Coast",
@@ -38,74 +41,58 @@ const localBusinessSchema = {
   priceRange: "$$",
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How quickly can you respond to an emergency breakdown?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We offer 24/7 emergency response and aim to have a technician on-site within 2–4 hours for urgent breakdowns across Brisbane, Gold Coast and Sunshine Coast.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you service all air conditioning brands?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Our ARC-licensed technicians are experienced with all major brands including Daikin, Mitsubishi Electric, Fujitsu, Actron, Samsung, LG, Panasonic, Hitachi and more.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What does a preventative maintenance plan include?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Our maintenance plans include scheduled inspections, filter cleaning, coil checks, refrigerant level assessment, electrical checks and a full service report — typically twice yearly.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you offer a workmanship guarantee?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. All Shelair installations come with a 5-year workmanship guarantee in addition to any manufacturer warranty on parts and equipment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you provide free quotes?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. We provide free, no-obligation quotes for all new installations and major works. Contact us to arrange a site visit.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What areas do you service?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We service Brisbane, the Gold Coast and the Sunshine Coast, including surrounding suburbs across South East Queensland.",
-      },
-    },
-  ],
-};
-
-export const revalidate = 600;
-
 export default async function Home() {
   const supabase = createAdminClient();
-  const [{ data: pricingTiersData }, featuredProjects, industries, brands, otherBrands] = await Promise.all([
-    withRetry(() => supabase.from("pricing_tiers").select("*").order("position")),
-    withRetry(() =>
-      supabase.from("projects").select("*").eq("featured", true).order("position").limit(3)
-    ).then((r) => r.data ?? []).catch(() => []),
-    withRetry(() => getAllIndustries(supabase)).catch(() => []),
-    withRetry(() => getAllBrands(supabase)).catch(() => []),
-    withRetry(() => getAllOtherBrands(supabase)).catch(() => []),
-  ]);
+  const [{ data: faqs }, { data: testimonials }, { data: pricingTiersData }, featuredProjects, industries, brands, otherBrands] =
+    await Promise.all([
+      withRetry(() => supabase.from("faqs").select("*").order("position")),
+      withRetry(() => supabase.from("testimonials").select("*").order("position")),
+      withRetry(() => supabase.from("pricing_tiers").select("*").order("position")),
+      withRetry(() =>
+        supabase.from("projects").select("*").eq("featured", true).order("position").limit(3)
+      ).then((r) => r.data ?? []).catch(() => []),
+      withRetry(() => getAllIndustries(supabase)).catch(() => []),
+      withRetry(() => getAllBrands(supabase)).catch(() => []),
+      withRetry(() => getAllOtherBrands(supabase)).catch(() => []),
+    ]);
+
+  const faqItems = faqs?.length
+    ? faqs.map((f: { question: string; answer: string }) => ({ q: f.question, a: f.answer }))
+    : faqSection.faqs;
+
+  const reviewItems = testimonials?.length
+    ? testimonials.map((t: { name: string; role: string; quote: string; rating?: number }) => ({ name: t.name, role: t.role, quote: t.quote, rating: t.rating ?? 5 }))
+    : testimonialsSection.testimonials.map((t) => ({ ...t, rating: 5 }));
+
+  const avgRating = reviewItems.reduce((sum: number, t: { rating: number }) => sum + t.rating, 0) / reviewItems.length;
+
+  const reviewsSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Shelair",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: avgRating.toFixed(1),
+      reviewCount: reviewItems.length,
+      bestRating: 5,
+    },
+    review: reviewItems.map((t: { name: string; quote: string; rating: number }) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: t.name },
+      reviewBody: t.quote,
+      reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: 5 },
+    })),
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((f: { q: string; a: string }) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
 
   return (
     <>
@@ -115,9 +102,15 @@ export default async function Home() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Index
+        faqItems={faqItems}
+        reviewItems={reviewItems}
         pricingTiers={pricingTiersData ?? []}
         featuredProjects={featuredProjects}
         industries={industries}

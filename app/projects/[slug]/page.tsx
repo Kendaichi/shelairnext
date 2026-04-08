@@ -36,8 +36,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProjectPageRoute({ params }: Props) {
   const { slug } = await params;
   const supabase = createAdminClient();
-  const project = await withRetry(() => getProjectBySlug(supabase, slug));
+  const [project, allProjects] = await Promise.all([
+    withRetry(() => getProjectBySlug(supabase, slug)).catch(() => null),
+    withRetry(() => getAllProjects(supabase)).catch(() => []),
+  ]);
   if (!project) notFound();
+
+  const related = allProjects.filter((p) => p.slug !== slug).slice(0, 3);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -52,7 +57,7 @@ export default async function ProjectPageRoute({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <ProjectPage project={project} />
+      <ProjectPage project={project} related={related} />
     </>
   );
 }

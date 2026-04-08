@@ -1,15 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useParams, notFound } from "next/navigation";
+import Image from "next/image";
 import Layout from "@/components/Layout";
-import { getSuburbBySlug } from "@/data/locations";
-import { MapPin, ArrowRight, Phone, Clock, Wrench, Shield, Headphones, ShieldCheck, Thermometer, BarChart3, Snowflake, UtensilsCrossed, ShoppingCart, Pill, Warehouse, Factory } from "lucide-react";
+import { MapPin, ArrowRight, Phone, Clock, Wrench, Shield, Headphones, BookOpen, FileText, Video } from "lucide-react";
+import { getIcon } from "@/app/admin/services/icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import CTABanner from "@/components/home/CTABanner";
 import { motion, Variants } from "framer-motion";
+import type { LocationCity, LocationSuburb, Service, Industry, Project } from "@/lib/supabase/content";
+import type { Post } from "@/lib/supabase/posts";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -25,41 +27,35 @@ const cardVariant: Variants = {
   }),
 };
 
-const services = [
-  { icon: Clock, title: "24/7 Emergency Repairs", desc: "Round-the-clock breakdown service with rapid response across Brisbane, Gold Coast and Sunshine Coast." },
-  { icon: Wrench, title: "Preventative Maintenance", desc: "Scheduled servicing plans that catch issues early — contract customers get priority service and discounted repairs." },
-  { icon: ShieldCheck, title: "5-Year Workmanship Guarantee", desc: "Every installation backed by a certified 5-year workmanship guarantee." },
-  { icon: Thermometer, title: "Energy Efficiency Upgrades", desc: "System tune-ups and targeted upgrades that reduce energy consumption on ageing HVAC systems." },
-  { icon: BarChart3, title: "System Design & Consulting", desc: "From single split systems to full multi-zone commercial designs tailored to your space." },
-  { icon: Snowflake, title: "Cold Room Hire", desc: "Temporary cold room hire available across South East Queensland for events or emergency use." },
+const defaultTrustSignals = [
+  { label: "30+ Years Experience", value: "30+" },
+  { label: "Licensed Technicians", value: "ARC" },
+  { label: "Workmanship Guarantee", value: "5 Yr" },
+  { label: "Support", value: "24/7" },
 ];
 
-const industries = [
-  { icon: UtensilsCrossed, title: "Restaurants & Hospitality" },
-  { icon: ShoppingCart, title: "Retail & Shopping Centres" },
-  { icon: Pill, title: "Healthcare & Medical" },
-  { icon: Warehouse, title: "Industrial & Warehousing" },
-  { icon: Factory, title: "Offices & Commercial Buildings" },
-];
+const trustIcons = [Clock, Wrench, Shield, Headphones];
 
-const trustSignals = [
-  { icon: Clock, label: "30+ Years Experience" },
-  { icon: Wrench, label: "Licensed Technicians" },
-  { icon: Shield, label: "ARC Approved & Authorised" },
-  { icon: Headphones, label: "24/7 Support" },
-];
+function TypeIcon({ type }: { type: string }) {
+  if (type === "Guide") return <BookOpen className="w-3 h-3" />;
+  if (type === "Video") return <Video className="w-3 h-3" />;
+  return <FileText className="w-3 h-3" />;
+}
 
-const SuburbPage = () => {
-  const { citySlug, suburbSlug } = useParams<{ citySlug: string; suburbSlug: string }>();
-  const result = getSuburbBySlug(citySlug || "", suburbSlug || "");
-
-  if (!result) notFound();
-
-  const { city, suburb } = result;
+const SuburbPage = ({
+  city, suburb, services, industries, projects, posts,
+}: {
+  city: LocationCity;
+  suburb: LocationSuburb;
+  services: Service[];
+  industries: Industry[];
+  projects: Project[];
+  posts: Post[];
+}) => {
+  const allSuburbs = city.location_suburbs ?? [];
 
   return (
     <Layout>
-      
 
       {/* Breadcrumb */}
       <div className="bg-secondary px-6 py-3">
@@ -74,9 +70,7 @@ const SuburbPage = () => {
                 <BreadcrumbLink asChild><Link href={`/locations/${city.slug}`}>{city.name}</Link></BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>{suburb.name}</BreadcrumbPage>
-              </BreadcrumbItem>
+              <BreadcrumbItem><BreadcrumbPage>{suburb.name}</BreadcrumbPage></BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
         </div>
@@ -96,7 +90,7 @@ const SuburbPage = () => {
               Air conditioning installation, service and emergency repairs in {suburb.name} and surrounding areas.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {suburb.venueTypes.map((v) => (
+              {suburb.venue_types.map((v) => (
                 <Badge key={v} variant="secondary" className="text-xs">{v}</Badge>
               ))}
             </div>
@@ -112,26 +106,24 @@ const SuburbPage = () => {
         </div>
       </section>
 
-      {/* Stats bar */}
+      {/* Trust bar */}
       <section className="bg-secondary py-8 px-6">
         <div className="container-narrow">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {trustSignals.map((t, i) => (
-              <motion.div
-                key={t.label}
-                custom={i}
-                variants={cardVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                className="flex items-center gap-3"
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                  <t.icon className="w-5 h-5 text-primary" />
-                </div>
-                <div className="font-semibold text-sm">{t.label}</div>
-              </motion.div>
-            ))}
+            {(suburb.stats?.length > 0 ? suburb.stats : defaultTrustSignals).map((stat, i) => {
+              const Icon = trustIcons[i] ?? Clock;
+              return (
+                <motion.div key={stat.label} custom={i} variants={cardVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-sm leading-tight">{stat.value}</div>
+                    <div className="text-xs text-muted-foreground">{stat.label}</div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -140,12 +132,8 @@ const SuburbPage = () => {
       <section className="section-padding bg-background">
         <div className="container-narrow max-w-3xl">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">
-              Air Conditioning Experts in {suburb.name}
-            </h2>
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              {suburb.localContextText}
-            </p>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Air Conditioning Experts in {suburb.name}</h2>
+            <p className="text-muted-foreground leading-relaxed text-lg">{suburb.local_context_text}</p>
           </motion.div>
         </div>
       </section>
@@ -157,24 +145,18 @@ const SuburbPage = () => {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Our Services in {suburb.name}</h2>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s, i) => (
-              <motion.div
-                key={s.title}
-                custom={i}
-                variants={cardVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                whileHover={{ y: -4 }}
-                className="bg-card rounded-2xl p-6 border border-border shadow-sm"
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <s.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-bold mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground">{s.desc}</p>
-              </motion.div>
-            ))}
+            {services.map((s, i) => {
+              const Icon = getIcon(s.icon_name);
+              return (
+                <motion.div key={s.id} custom={i} variants={cardVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} whileHover={{ y: -4 }} className="bg-card rounded-2xl p-6 border border-border shadow-sm">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-bold mb-2">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground">{s.description}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -186,53 +168,145 @@ const SuburbPage = () => {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Sectors We Serve in {suburb.name}</h2>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {industries.map((ind, i) => (
-              <motion.div
-                key={ind.title}
-                custom={i}
-                variants={cardVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                whileHover={{ y: -4 }}
-                className="bg-card rounded-xl p-5 border border-border shadow-sm text-center"
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                  <ind.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-semibold text-sm">{ind.title}</h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Nearby Suburbs */}
-      <section className="section-padding bg-secondary">
-        <div className="container-narrow">
-          <motion.div className="text-center mb-12" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <h2 className="text-2xl font-extrabold mb-2">Nearby Suburbs We Service</h2>
-          </motion.div>
-          <div className="flex flex-wrap justify-center gap-3">
-            {suburb.nearbySuburbs.map((name) => {
-              const linked = city.suburbs.find((s) => s.name === name);
-              return linked ? (
-                <Link
-                  key={name}
-                  href={`/locations/${city.slug}/${linked.slug}`}
-                  className="px-4 py-2 bg-card border border-border rounded-full text-sm font-medium hover:border-primary/30 hover:text-primary transition-colors"
-                >
-                  {name}
-                </Link>
-              ) : (
-                <span key={name} className="px-4 py-2 bg-card border border-border rounded-full text-sm font-medium text-muted-foreground">
-                  {name}
-                </span>
+            {industries.map((ind, i) => {
+              const Icon = getIcon(ind.icon_name);
+              return (
+                <motion.div key={ind.id} custom={i} variants={cardVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} whileHover={{ y: -4 }} className="bg-card rounded-xl p-5 border border-border shadow-sm text-center">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-sm">{ind.title}</h3>
+                </motion.div>
               );
             })}
           </div>
         </div>
       </section>
+
+      {/* Nearby Suburbs */}
+      {suburb.nearby_suburbs?.length > 0 && (
+        <section className="section-padding bg-secondary">
+          <div className="container-narrow">
+            <motion.div className="text-center mb-12" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <h2 className="text-2xl font-extrabold mb-2">Nearby Suburbs We Service</h2>
+            </motion.div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {suburb.nearby_suburbs.map((name) => {
+                const linked = allSuburbs.find((s) => s.name === name);
+                return linked ? (
+                  <Link key={name} href={`/locations/${city.slug}/${linked.slug}`}
+                    className="px-4 py-2 bg-card border border-border rounded-full text-sm font-medium hover:border-primary/30 hover:text-primary transition-colors">
+                    {name}
+                  </Link>
+                ) : (
+                  <span key={name} className="px-4 py-2 bg-card border border-border rounded-full text-sm font-medium text-muted-foreground">{name}</span>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Recent Projects */}
+      {projects.length > 0 && (
+        <section className="section-padding bg-background">
+          <div className="container-narrow">
+            <motion.div className="text-center mb-12" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Recent Projects in {city.name}</h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                See how we&apos;ve helped businesses in {city.name} with their air conditioning needs.
+              </p>
+            </motion.div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {projects.map((p, i) => (
+                <motion.div key={p.id} custom={i} variants={cardVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
+                  <Link
+                    href={`/projects/${p.slug}`}
+                    className="block bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 overflow-hidden group h-full"
+                  >
+                    {p.image_url && (
+                      <div className="relative h-48 overflow-hidden">
+                        <Image
+                          src={p.image_url}
+                          alt={p.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">{p.type}</span>
+                        <span className="text-xs text-muted-foreground">{p.size}</span>
+                      </div>
+                      <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors duration-200">{p.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.description}</p>
+                      <span className="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                        View Case Study <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Helpful Resources */}
+      {posts.length > 0 && (
+        <section className="section-padding bg-secondary">
+          <div className="container-narrow">
+            <motion.div className="text-center mb-12" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Helpful Resources</h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Expert guides and articles on air conditioning.
+              </p>
+            </motion.div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {posts.map((a, i) => (
+                <motion.div key={a.slug} custom={i} variants={cardVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
+                  <Link
+                    href={`/resources/${a.slug}`}
+                    className="block bg-card rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow group h-full overflow-hidden"
+                  >
+                    {a.image_url && (
+                      <div className="relative w-full h-40 overflow-hidden">
+                        <Image
+                          src={a.image_url}
+                          alt={a.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full flex items-center gap-1">
+                          <TypeIcon type={a.type} /> {a.type}
+                        </span>
+                        <span className="text-xs text-muted-foreground">{a.date}</span>
+                      </div>
+                      <h3 className="font-bold mb-2 group-hover:text-primary transition-colors leading-snug">{a.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{a.description}</p>
+                      <span className="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Read More <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+            <motion.div className="text-center mt-10" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+              <Button asChild variant="outline" size="lg" className="cursor-pointer">
+                <Link href="/resources">View All Resources <ArrowRight className="w-4 h-4 ml-2" /></Link>
+              </Button>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       <CTABanner />
     </Layout>

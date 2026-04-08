@@ -44,7 +44,12 @@ const FAQSection = dynamic(() => import("@/components/home/FAQSection"), {
   ssr: false,
 });
 
+type ReviewItem = { name: string; role: string; quote: string; rating: number };
+type FaqItem = { q: string; a: string };
+
 interface IndexProps {
+  faqItems: FaqItem[];
+  reviewItems: ReviewItem[];
   pricingTiers: PricingTier[];
   featuredProjects: Project[];
   industries: Industry[];
@@ -52,7 +57,7 @@ interface IndexProps {
   otherBrands: OtherBrand[];
 }
 
-const Index = ({ pricingTiers, featuredProjects, industries, brands, otherBrands }: IndexProps) => (
+const Index = ({ faqItems, reviewItems, pricingTiers, featuredProjects, industries, brands, otherBrands }: IndexProps) => (
   <Layout>
     <Hero />
     <TrustBar />
@@ -65,12 +70,12 @@ const Index = ({ pricingTiers, featuredProjects, industries, brands, otherBrands
     <IndustryCards industries={industries} />
     <BrandsSection brands={brands} otherBrands={otherBrands} />
     <ProjectsSection projects={featuredProjects} />
-    <Testimonials />
+    <Testimonials initialTestimonials={reviewItems} />
     <ClientsSection />
     <LocationsSection />
     <PricingSection initialTiers={pricingTiers} />
     <CTABanner />
-    <FAQSection />
+    <FAQSection initialFaqs={faqItems} />
   </Layout>
 );
 
