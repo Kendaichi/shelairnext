@@ -7,7 +7,7 @@ import { ArrowRight, Search, X, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CTABanner from "@/components/home/CTABanner";
-import heroImg from "@/assets/hero-coldroom.webp";
+import heroImg from "@/assets/hero-airconditioning.webp";
 import { motion, Variants } from "framer-motion";
 import type { Project } from "@/lib/supabase/content";
 import { useDebounce } from "@/hooks/use-debounce";
