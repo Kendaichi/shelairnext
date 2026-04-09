@@ -148,8 +148,8 @@ export default function ProjectEditor({
       }
       router.push("/admin/projects");
       router.refresh();
-    } catch (e: unknown) {
-      setServerError(e instanceof Error ? e.message : "Something went wrong.");
+    } catch (e: any) {
+      setServerError(e?.message ?? (typeof e === "string" ? e : "Something went wrong."));
     } finally {
       setSaving(false);
     }

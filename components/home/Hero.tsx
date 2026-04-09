@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
-import heroImg from "@/assets/hero-coldroom.jpg";
+import heroImg from "@/assets/hero-airconditioning.jpg";
 import { hero } from "@/data/home";
 
 const trustItems = [
@@ -150,7 +150,12 @@ const Hero = () => {
               animate={{ opacity: 1, y: [0, -5, 0, 5, 0] }}
               transition={{
                 opacity: { delay: 1.0, duration: 0.45 },
-                y: { delay: 1.5, duration: 4, repeat: Infinity, ease: "easeInOut" },
+                y: {
+                  delay: 1.5,
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
               }}
             >
               <div className="text-sm font-bold">ARC Licensed</div>
@@ -164,7 +169,12 @@ const Hero = () => {
               animate={{ opacity: 1, x: [0, -4, 0, 4, 0] }}
               transition={{
                 opacity: { delay: 1.15, duration: 0.45 },
-                x: { delay: 1.6, duration: 3, repeat: Infinity, ease: "easeInOut" },
+                x: {
+                  delay: 1.6,
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
               }}
             >
               <span className="relative flex h-2.5 w-2.5">
@@ -172,8 +182,12 @@ const Hero = () => {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
               </span>
               <div>
-                <div className="text-sm font-bold text-foreground leading-none">24/7 Support</div>
-                <div className="text-xs text-muted-foreground mt-0.5">Emergency Response</div>
+                <div className="text-sm font-bold text-foreground leading-none">
+                  24/7 Support
+                </div>
+                <div className="text-xs text-muted-foreground mt-0.5">
+                  Emergency Response
+                </div>
               </div>
             </motion.div>
 
@@ -184,7 +198,12 @@ const Hero = () => {
               animate={{ opacity: 1, y: [0, 5, 0, -5, 0] }}
               transition={{
                 opacity: { delay: 0.85, duration: 0.45 },
-                y: { delay: 1.5, duration: 4, repeat: Infinity, ease: "easeInOut" },
+                y: {
+                  delay: 1.5,
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
               }}
             >
               <div className="text-3xl font-extrabold text-primary leading-none">
