@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
-import heroImg from "@/assets/hero-airconditioning.jpg";
+import heroImg from "@/assets/hero-airconditioning.webp";
 import { hero } from "@/data/home";
 
 const trustItems = [
@@ -159,7 +159,7 @@ const Hero = () => {
               }}
             >
               <div className="text-sm font-bold">ARC Licensed</div>
-              <div className="text-xs opacity-75">Licence 61340</div>
+              <div className="text-xs opacity-75">Licence AU61340</div>
             </motion.div>
 
             {/* Floating badge — center left, pulsing */}

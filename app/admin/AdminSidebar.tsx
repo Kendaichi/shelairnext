@@ -31,7 +31,7 @@ import {
   X,
 } from "lucide-react";
 import Image from "next/image";
-import shelairLogo from "@/assets/shelair-logo-web.png";
+import shelairLogo from "@/assets/shelair-logo-web.webp";
 import type { UserProfile, PermissionKey } from "@/lib/rbac";
 import { Badge } from "@/components/ui/badge";
 

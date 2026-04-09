@@ -12,7 +12,7 @@ import {
   Linkedin,
   Instagram,
 } from "lucide-react";
-import shelairLogo from "@/assets/shelair-logo-web.png";
+import shelairLogo from "@/assets/shelair-logo-web.webp";
 import { createClient } from "@/lib/supabase/client";
 import type { SiteSettings, FooterLink } from "@/lib/supabase/content";
 

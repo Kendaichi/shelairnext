@@ -93,7 +93,6 @@ const featureStagger: Variants = {
 
 const Industries = () => (
   <Layout>
-    
     <section className="section-padding bg-background">
       <div className="container-narrow">
         <motion.div
@@ -115,11 +114,12 @@ const Industries = () => (
             variants={fadeUp}
             className="text-4xl md:text-5xl font-extrabold mb-6"
           >
-            Refrigeration Repair & Maintenance for Every Industry
+            Commercial Refrigeration, HVAC & Beer Systems
           </motion.h1>
           <motion.p variants={fadeUp} className="text-lg text-muted-foreground">
-            Specialist servicing, emergency repairs and maintenance plans
-            tailored to the unique demands of your sector.
+            Repairs, maintenance, installation and design-and-construct
+            solutions built around uptime, compliance, and the operational
+            demands of your business.
           </motion.p>
         </motion.div>
 

@@ -29,11 +29,11 @@ export interface HeroStat {
 
 export const hero = {
   badge: "Call Now. We can be there today",
-  heading: "Commercial Air Conditioning",
-  headingHighlight: " Repair & Maintenance",
-  headingEnd: ": Keeping Your Cold Chain Unbroken 24/7",
+  heading: "One Contractor for",
+  headingHighlight: " Refrigeration, HVAC, & Beer Systems",
+  headingEnd: ": Keeping Critical Commercial Systems Running 24/7",
   subheading:
-    "Breakdowns don't wait — neither do we. Fast emergency repairs, preventative maintenance plans, and expert servicing for all commercial air conditioning systems.",
+    "From cold rooms and air conditioning to beer systems and glycol lines, we repair, maintain and install essential systems your business depends on - with fast response when failure is not an option. ",
   primaryCta: { label: "Get a Quote", href: "/contact" },
   secondaryCta: { label: "Book Site Inspection", href: "/contact" },
   floatingStats: [

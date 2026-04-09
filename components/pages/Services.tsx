@@ -95,15 +95,11 @@ const Services = ({ services }: { services: Service[] }) => (
             variants={fadeUp}
             className="text-4xl md:text-5xl font-extrabold mb-6"
           >
-            Air Conditioning Installation, Service & Repairs
+            Commercial Air Conditioning & Refrigeration Services Near You
           </motion.h1>
-          <motion.p
-            variants={fadeUp}
-            className="text-lg text-muted-foreground"
-          >
-            From emergency callouts to full commercial installations and
-            ongoing maintenance plans — one expert HVAC team for every need
-            across Brisbane, Gold Coast & Sunshine Coast.
+          <motion.p variants={fadeUp} className="text-lg text-muted-foreground">
+            Installation, maintenance and emergency repairs across Brisbane,
+            Gold Coast and Sunshine Coast. Find your local Shelair team.
           </motion.p>
         </motion.div>
 
@@ -144,8 +140,8 @@ const Services = ({ services }: { services: Service[] }) => (
             Air Conditioning Emergency?
           </h2>
           <p className="text-primary-foreground/80">
-            Call now for priority dispatch — fast response, 24/7 across
-            South East Queensland.
+            Call now for priority dispatch — fast response, 24/7 across South
+            East Queensland.
           </p>
         </div>
         <Button asChild size="lg" variant="secondary" className="shrink-0">
@@ -166,16 +162,16 @@ const Services = ({ services }: { services: Service[] }) => (
           viewport={{ once: true }}
         >
           <p className="text-muted-foreground leading-relaxed mb-4">
-            We install and service all major air conditioning brands —
-            Panasonic (our preferred supplier), Daikin, Mitsubishi Electric,
-            Fujitsu, Samsung, LG, Toshiba and more. Whether it&apos;s a
-            split system, ducted unit, VRV/VRF system or cassette —
-            we&apos;ve installed it and we can fix it.
+            We install and service all major air conditioning brands — Panasonic
+            (our preferred supplier), Daikin, Mitsubishi Electric, Fujitsu,
+            Samsung, LG, Toshiba and more. Whether it&apos;s a split system,
+            ducted unit, VRV/VRF system or cassette — we&apos;ve installed it
+            and we can fix it.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            When you need new HVAC capacity, we also design, supply and
-            install complete systems for commercial buildings, offices,
-            retail spaces, and industrial environments.
+            When you need new HVAC capacity, we also design, supply and install
+            complete systems for commercial buildings, offices, retail spaces,
+            and industrial environments.
           </p>
         </motion.div>
         <motion.div
@@ -215,8 +211,8 @@ const Services = ({ services }: { services: Service[] }) => (
             How We Deliver Your Project
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A transparent, structured process that keeps you informed at
-            every stage — from first call to final sign-off.
+            A transparent, structured process that keeps you informed at every
+            stage — from first call to final sign-off.
           </p>
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

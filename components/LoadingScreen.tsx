@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import shelairLogo from "@/assets/shelair-logo-web.png";
+import shelairLogo from "@/assets/shelair-logo-web.webp";
 import { useLoading } from "@/lib/loading-context";
 
 export default function LoadingScreen() {
