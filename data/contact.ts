@@ -2,7 +2,7 @@
 
 export const contactPage = {
   badge: "Contact Us",
-  heading: "Got a Service, Repair or Project Quote",
+  heading: "Get a Service, Repair or Project Quote",
   subheading:
     "Whether you need emergency repairs, planned maintenance, new installation or a full design-and-construct project, our team will respond within 2 business hours.",
   emergencyBanner: {
